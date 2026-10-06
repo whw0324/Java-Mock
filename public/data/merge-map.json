@@ -1,0 +1,1431 @@
+[
+  {
+    "primaryId": "y26-projects",
+    "title": "Fictional allocation team / outbound team learning context",
+    "sourceIds": [
+      "y26-projects"
+    ]
+  },
+  {
+    "primaryId": "y26-1.1",
+    "title": "★ What Are DI and IoC? How Are They Related?",
+    "sourceIds": [
+      "y26-1.1",
+      "y25-101"
+    ]
+  },
+  {
+    "primaryId": "y26-1.2",
+    "title": "★ What Is a Spring Bean? How Is It Created? `@Component` vs `@Configuration` + `@Bean`",
+    "sourceIds": [
+      "y26-1.2",
+      "y25-103",
+      "y25-111"
+    ]
+  },
+  {
+    "primaryId": "y26-1.3",
+    "title": "★ Spring vs Spring Boot",
+    "sourceIds": [
+      "y26-1.3",
+      "y25-100"
+    ]
+  },
+  {
+    "primaryId": "y26-1.4",
+    "title": "ApplicationContext vs BeanFactory",
+    "sourceIds": [
+      "y26-1.4",
+      "y25-104"
+    ]
+  },
+  {
+    "primaryId": "y26-1.5",
+    "title": "★ Three Types of DI; Why Prefer Constructor Injection?",
+    "sourceIds": [
+      "y26-1.5",
+      "y25-102"
+    ]
+  },
+  {
+    "primaryId": "y26-1.6",
+    "title": "★ Bean Scopes; What Is the Default?",
+    "sourceIds": [
+      "y26-1.6",
+      "y25-105",
+      "y25-106",
+      "y25-107"
+    ]
+  },
+  {
+    "primaryId": "y26-1.7",
+    "title": "★ Spring Bean Lifecycle",
+    "sourceIds": [
+      "y26-1.7"
+    ]
+  },
+  {
+    "primaryId": "y26-1.8",
+    "title": "★ How Does Spring Boot Connect to a Database?",
+    "sourceIds": [
+      "y26-1.8"
+    ]
+  },
+  {
+    "primaryId": "y26-1.9",
+    "title": "★ How Do You Design a Spring Boot REST API?",
+    "sourceIds": [
+      "y26-1.9"
+    ]
+  },
+  {
+    "primaryId": "y26-1.10",
+    "title": "What Is a Circular Dependency? How Do You Resolve It?",
+    "sourceIds": [
+      "y26-1.10",
+      "y25-109"
+    ]
+  },
+  {
+    "primaryId": "y26-1.11",
+    "title": "What Is Dependency Ambiguity? How Do You Avoid It?",
+    "sourceIds": [
+      "y26-1.11",
+      "y25-108"
+    ]
+  },
+  {
+    "primaryId": "y26-1.12",
+    "title": "What Is a Thread Pool? What Are Its Benefits?",
+    "sourceIds": [
+      "y26-1.12",
+      "y25-032"
+    ]
+  },
+  {
+    "primaryId": "y26-1.13",
+    "title": "What Is Connection Pooling?",
+    "sourceIds": [
+      "y26-1.13"
+    ]
+  },
+  {
+    "primaryId": "y26-1.14",
+    "title": "Global Exception Handling; How Is It Implemented?",
+    "sourceIds": [
+      "y26-1.14",
+      "y25-019"
+    ]
+  },
+  {
+    "primaryId": "y26-1.15",
+    "title": "What Is AOP? How Does It Relate to the Proxy Pattern?",
+    "sourceIds": [
+      "y26-1.15",
+      "y25-067",
+      "y25-126"
+    ]
+  },
+  {
+    "primaryId": "y26-1.16",
+    "title": "How Does Spring Validation Work?",
+    "sourceIds": [
+      "y26-1.16",
+      "y25-124"
+    ]
+  },
+  {
+    "primaryId": "y26-1.17",
+    "title": "Spring Security + JWT Authentication",
+    "sourceIds": [
+      "y26-1.17",
+      "y25-125",
+      "y25-127",
+      "y25-128",
+      "y25-153"
+    ]
+  },
+  {
+    "primaryId": "y26-1.18",
+    "title": "JWT Authorization and SecurityFilterChain",
+    "sourceIds": [
+      "y26-1.18",
+      "y25-155"
+    ]
+  },
+  {
+    "primaryId": "y26-1.19",
+    "title": "The Three Parts of a JWT",
+    "sourceIds": [
+      "y26-1.19"
+    ]
+  },
+  {
+    "primaryId": "y26-1.20",
+    "title": "JWT Expiration and Refresh Tokens",
+    "sourceIds": [
+      "y26-1.20"
+    ]
+  },
+  {
+    "primaryId": "y26-1.21",
+    "title": "Encoding vs Encryption vs Hashing",
+    "sourceIds": [
+      "y26-1.21"
+    ]
+  },
+  {
+    "primaryId": "y26-1.22",
+    "title": "What Does `@Transactional` Do? Does It Work on Private Methods?",
+    "sourceIds": [
+      "y26-1.22",
+      "y25-112"
+    ]
+  },
+  {
+    "primaryId": "y26-1.23",
+    "title": "Core REST Principles",
+    "sourceIds": [
+      "y26-1.23",
+      "y25-120",
+      "y25-121",
+      "y25-122",
+      "y25-123"
+    ]
+  },
+  {
+    "primaryId": "y26-1.24",
+    "title": "What Does `@SpringBootApplication` Do Internally?",
+    "sourceIds": [
+      "y26-1.24",
+      "y25-110"
+    ]
+  },
+  {
+    "primaryId": "y26-1.25",
+    "title": "How Do You Store Sensitive Configuration in Spring Boot?",
+    "sourceIds": [
+      "y26-1.25",
+      "y26-1.43",
+      "y25-135"
+    ]
+  },
+  {
+    "primaryId": "y26-1.26",
+    "title": "What Is Spring Boot Actuator?",
+    "sourceIds": [
+      "y26-1.26"
+    ]
+  },
+  {
+    "primaryId": "y26-1.27",
+    "title": "How Do You Handle Excessive Requests and Potential OOM?",
+    "sourceIds": [
+      "y26-1.27"
+    ]
+  },
+  {
+    "primaryId": "y26-1.28",
+    "title": "API Versioning and Backward Compatibility",
+    "sourceIds": [
+      "y26-1.28"
+    ]
+  },
+  {
+    "primaryId": "y26-1.29",
+    "title": "How Does Spring Boot Separate Environments?",
+    "sourceIds": [
+      "y26-1.29",
+      "y25-134",
+      "y25-143"
+    ]
+  },
+  {
+    "primaryId": "y26-1.30",
+    "title": "What Is `@CircuitBreaker`? When Would You Use It?",
+    "sourceIds": [
+      "y26-1.30",
+      "y25-066"
+    ]
+  },
+  {
+    "primaryId": "y26-1.31",
+    "title": "`@ConfigurationProperties` vs `@Value`",
+    "sourceIds": [
+      "y26-1.31"
+    ]
+  },
+  {
+    "primaryId": "y26-1.32",
+    "title": "Key JUnit 5 Annotations",
+    "sourceIds": [
+      "y26-1.32"
+    ]
+  },
+  {
+    "primaryId": "y26-1.33",
+    "title": "Mockito: Mock vs Spy; `doReturn` vs `when().thenReturn`",
+    "sourceIds": [
+      "y26-1.33",
+      "y25-130",
+      "y25-131",
+      "y25-132"
+    ]
+  },
+  {
+    "primaryId": "y26-1.34",
+    "title": "How Do You Unit-Test the Service Layer?",
+    "sourceIds": [
+      "y26-1.34"
+    ]
+  },
+  {
+    "primaryId": "y26-1.35",
+    "title": "How Do You Test the Controller Layer?",
+    "sourceIds": [
+      "y26-1.35"
+    ]
+  },
+  {
+    "primaryId": "y26-1.36",
+    "title": "How Do You Test Private Methods?",
+    "sourceIds": [
+      "y26-1.36"
+    ]
+  },
+  {
+    "primaryId": "y26-1.37",
+    "title": "How Do You Test Void Methods?",
+    "sourceIds": [
+      "y26-1.37"
+    ]
+  },
+  {
+    "primaryId": "y26-1.38",
+    "title": "What Is the JPA N+1 Problem? How Do You Solve It?",
+    "sourceIds": [
+      "y26-1.38"
+    ]
+  },
+  {
+    "primaryId": "y26-1.39",
+    "title": "Eager vs Lazy Fetching",
+    "sourceIds": [
+      "y26-1.39",
+      "y25-085"
+    ]
+  },
+  {
+    "primaryId": "y26-1.40",
+    "title": "Spring MVC Request Lifecycle",
+    "sourceIds": [
+      "y26-1.40",
+      "y25-113",
+      "y25-114"
+    ]
+  },
+  {
+    "primaryId": "y26-1.41",
+    "title": "How Do You Store User Passwords Securely?",
+    "sourceIds": [
+      "y26-1.41"
+    ]
+  },
+  {
+    "primaryId": "y26-1.42",
+    "title": "How Do Microservices Centrally Manage Configuration?",
+    "sourceIds": [
+      "y26-1.42",
+      "y25-154"
+    ]
+  },
+  {
+    "primaryId": "y26-1.44",
+    "title": "Polling vs Streaming",
+    "sourceIds": [
+      "y26-1.44"
+    ]
+  },
+  {
+    "primaryId": "y26-1.45",
+    "title": "Fail-Fast Design",
+    "sourceIds": [
+      "y26-1.45"
+    ]
+  },
+  {
+    "primaryId": "y26-1.46",
+    "title": "How Do You Stream Data to Clients? SSE vs WebSocket",
+    "sourceIds": [
+      "y26-1.46"
+    ]
+  },
+  {
+    "primaryId": "y26-1.47",
+    "title": "🟠 Coding: Build a CRUD REST API",
+    "sourceIds": [
+      "y26-1.47"
+    ]
+  },
+  {
+    "primaryId": "y26-1.48",
+    "title": "🟠 Coding: JPA Entity Relationships",
+    "sourceIds": [
+      "y26-1.48",
+      "y25-084"
+    ]
+  },
+  {
+    "primaryId": "y25-115",
+    "title": "Difference between @Controller and @RestController",
+    "sourceIds": [
+      "y25-115"
+    ]
+  },
+  {
+    "primaryId": "y25-116",
+    "title": "What is RestTemplate?",
+    "sourceIds": [
+      "y25-116"
+    ]
+  },
+  {
+    "primaryId": "y25-117",
+    "title": "@RequestBody vs. @ResponseBody",
+    "sourceIds": [
+      "y25-117"
+    ]
+  },
+  {
+    "primaryId": "y25-118",
+    "title": "@PathVariable vs. @RequestParam",
+    "sourceIds": [
+      "y25-118"
+    ]
+  },
+  {
+    "primaryId": "y25-119",
+    "title": "How do you use Spring Repository?",
+    "sourceIds": [
+      "y25-119"
+    ]
+  },
+  {
+    "primaryId": "y25-129",
+    "title": "What is unit testing vs integration testing?",
+    "sourceIds": [
+      "y25-129"
+    ]
+  },
+  {
+    "primaryId": "y25-133",
+    "title": "What are some tools that can be used to view test code coverage?",
+    "sourceIds": [
+      "y25-133"
+    ]
+  },
+  {
+    "primaryId": "y25-140",
+    "title": "What is Swagger?",
+    "sourceIds": [
+      "y25-140"
+    ]
+  },
+  {
+    "primaryId": "y26-2.1",
+    "title": "★ HashMap Internals",
+    "sourceIds": [
+      "y26-2.1",
+      "y25-013"
+    ]
+  },
+  {
+    "primaryId": "y26-2.2",
+    "title": "★ Thread-Safe Singleton Implementations",
+    "sourceIds": [
+      "y26-2.2",
+      "y26-2.25",
+      "y25-056",
+      "y25-057",
+      "y25-058",
+      "y25-059",
+      "y25-060"
+    ]
+  },
+  {
+    "primaryId": "y26-2.3",
+    "title": "★ Checked vs Unchecked Exceptions",
+    "sourceIds": [
+      "y26-2.3",
+      "y25-017",
+      "y25-018",
+      "y25-020",
+      "y25-021"
+    ]
+  },
+  {
+    "primaryId": "y26-2.4",
+    "title": "★ Functional Interfaces and Lambdas",
+    "sourceIds": [
+      "y26-2.4",
+      "y25-044",
+      "y25-045",
+      "y25-046"
+    ]
+  },
+  {
+    "primaryId": "y26-2.5",
+    "title": "Comparable vs Comparator",
+    "sourceIds": [
+      "y26-2.5",
+      "y25-047"
+    ]
+  },
+  {
+    "primaryId": "y26-2.6",
+    "title": "The Four OOP Principles",
+    "sourceIds": [
+      "y26-2.6",
+      "y25-002",
+      "y25-003",
+      "y25-004"
+    ]
+  },
+  {
+    "primaryId": "y26-2.7",
+    "title": "Multithreading: synchronized, Race Conditions, Deadlocks",
+    "sourceIds": [
+      "y26-2.7",
+      "y25-033",
+      "y25-034"
+    ]
+  },
+  {
+    "primaryId": "y26-2.8",
+    "title": "Thread vs Process",
+    "sourceIds": [
+      "y26-2.8"
+    ]
+  },
+  {
+    "primaryId": "y26-2.9",
+    "title": "ConcurrentHashMap vs SynchronizedMap",
+    "sourceIds": [
+      "y26-2.9",
+      "y25-015"
+    ]
+  },
+  {
+    "primaryId": "y26-2.10",
+    "title": "CompletableFuture; When Would You Use It?",
+    "sourceIds": [
+      "y26-2.10",
+      "y25-031"
+    ]
+  },
+  {
+    "primaryId": "y26-2.11",
+    "title": "Null Handling and Optional",
+    "sourceIds": [
+      "y26-2.11",
+      "y25-054"
+    ]
+  },
+  {
+    "primaryId": "y26-2.12",
+    "title": "Java Collections: List, Set, Queue, Map",
+    "sourceIds": [
+      "y26-2.12",
+      "y25-016"
+    ]
+  },
+  {
+    "primaryId": "y26-2.13",
+    "title": "try-with-resources",
+    "sourceIds": [
+      "y26-2.13"
+    ]
+  },
+  {
+    "primaryId": "y26-2.14",
+    "title": "Marker Interfaces",
+    "sourceIds": [
+      "y26-2.14",
+      "y25-036"
+    ]
+  },
+  {
+    "primaryId": "y26-2.15",
+    "title": "Immutable Classes and Deep Copies",
+    "sourceIds": [
+      "y26-2.15",
+      "y25-008"
+    ]
+  },
+  {
+    "primaryId": "y26-2.16",
+    "title": "Interface vs Abstract Class",
+    "sourceIds": [
+      "y26-2.16",
+      "y25-005",
+      "y25-053"
+    ]
+  },
+  {
+    "primaryId": "y26-2.17",
+    "title": "The Diamond Problem",
+    "sourceIds": [
+      "y26-2.17",
+      "y25-006"
+    ]
+  },
+  {
+    "primaryId": "y26-2.18",
+    "title": "Fail-Fast vs Weakly Consistent / Snapshot Iterators",
+    "sourceIds": [
+      "y26-2.18"
+    ]
+  },
+  {
+    "primaryId": "y26-2.19",
+    "title": "SOLID",
+    "sourceIds": [
+      "y26-2.19",
+      "y25-001"
+    ]
+  },
+  {
+    "primaryId": "y26-2.20",
+    "title": "String Pool",
+    "sourceIds": [
+      "y26-2.20",
+      "y25-009",
+      "y25-010"
+    ]
+  },
+  {
+    "primaryId": "y26-2.21",
+    "title": "What Is the JVM? Why Does It Matter?",
+    "sourceIds": [
+      "y26-2.21",
+      "y25-041",
+      "y25-042"
+    ]
+  },
+  {
+    "primaryId": "y26-2.22",
+    "title": "Heap vs Stack",
+    "sourceIds": [
+      "y26-2.22"
+    ]
+  },
+  {
+    "primaryId": "y26-2.23",
+    "title": "🟠 Coding: Stream API",
+    "sourceIds": [
+      "y26-2.23"
+    ]
+  },
+  {
+    "primaryId": "y26-2.24",
+    "title": "Coding: OOP Design — Workshop Seat Reservation",
+    "sourceIds": [
+      "y26-2.24"
+    ]
+  },
+  {
+    "primaryId": "y25-007",
+    "title": "Is Java passing by value or passing by reference?",
+    "sourceIds": [
+      "y25-007"
+    ]
+  },
+  {
+    "primaryId": "y25-011",
+    "title": "Difference between String, StringBuilder, and StringBuffer",
+    "sourceIds": [
+      "y25-011"
+    ]
+  },
+  {
+    "primaryId": "y25-012",
+    "title": "Difference between default and protected access modifier",
+    "sourceIds": [
+      "y25-012"
+    ]
+  },
+  {
+    "primaryId": "y25-014",
+    "title": "How does HashSet work internally?",
+    "sourceIds": [
+      "y25-014"
+    ]
+  },
+  {
+    "primaryId": "y25-022",
+    "title": "Difference between final, finally, finalize",
+    "sourceIds": [
+      "y25-022"
+    ]
+  },
+  {
+    "primaryId": "y25-023",
+    "title": "How to create a thread?",
+    "sourceIds": [
+      "y25-023"
+    ]
+  },
+  {
+    "primaryId": "y25-024",
+    "title": "Difference between Runnable and Callable",
+    "sourceIds": [
+      "y25-024"
+    ]
+  },
+  {
+    "primaryId": "y25-025",
+    "title": "Why wait() and notify() are in Object class but not in Thread Class",
+    "sourceIds": [
+      "y25-025"
+    ]
+  },
+  {
+    "primaryId": "y25-026",
+    "title": "What is join()?",
+    "sourceIds": [
+      "y25-026"
+    ]
+  },
+  {
+    "primaryId": "y25-027",
+    "title": "Explain thread life cycle",
+    "sourceIds": [
+      "y25-027"
+    ]
+  },
+  {
+    "primaryId": "y25-028",
+    "title": "Difference between sleep() and wait()",
+    "sourceIds": [
+      "y25-028"
+    ]
+  },
+  {
+    "primaryId": "y25-029",
+    "title": "What is countDownLatch?",
+    "sourceIds": [
+      "y25-029"
+    ]
+  },
+  {
+    "primaryId": "y25-030",
+    "title": "What is semaphore?",
+    "sourceIds": [
+      "y25-030"
+    ]
+  },
+  {
+    "primaryId": "y25-035",
+    "title": "What is readWriteLock?",
+    "sourceIds": [
+      "y25-035"
+    ]
+  },
+  {
+    "primaryId": "y25-037",
+    "title": "Java Serialization, Deserialization, and Transient Fields",
+    "sourceIds": [
+      "y25-037",
+      "y25-038",
+      "y25-039"
+    ]
+  },
+  {
+    "primaryId": "y25-043",
+    "title": "Have you used Java 8? What features are you familiar with?",
+    "sourceIds": [
+      "y25-043"
+    ]
+  },
+  {
+    "primaryId": "y25-055",
+    "title": "What design patterns have you used?",
+    "sourceIds": [
+      "y25-055"
+    ]
+  },
+  {
+    "primaryId": "y25-061",
+    "title": "Factory and Abstract Factory Patterns: Purpose and Implementation",
+    "sourceIds": [
+      "y25-061",
+      "y25-062",
+      "y25-063"
+    ]
+  },
+  {
+    "primaryId": "y25-064",
+    "title": "Provide a code example for builder design pattern",
+    "sourceIds": [
+      "y25-064"
+    ]
+  },
+  {
+    "primaryId": "y25-068",
+    "title": "Explain Observer design pattern",
+    "sourceIds": [
+      "y25-068"
+    ]
+  },
+  {
+    "primaryId": "y25-069",
+    "title": "Explain Chain of Responsibility design pattern",
+    "sourceIds": [
+      "y25-069"
+    ]
+  },
+  {
+    "primaryId": "y25-extra-stream",
+    "title": "Stream API Reference: Pipelines, Intermediate and Terminal Operations",
+    "sourceIds": [
+      "y25-extra-stream",
+      "y25-048",
+      "y25-049",
+      "y25-050",
+      "y25-051",
+      "y25-052"
+    ]
+  },
+  {
+    "primaryId": "y26-3.1",
+    "title": "★ SQL vs NoSQL",
+    "sourceIds": [
+      "y26-3.1",
+      "y25-091"
+    ]
+  },
+  {
+    "primaryId": "y26-3.2",
+    "title": "★ ACID",
+    "sourceIds": [
+      "y26-3.2",
+      "y25-089"
+    ]
+  },
+  {
+    "primaryId": "y26-3.3",
+    "title": "★ How Do You Optimize Slow Database Interactions?",
+    "sourceIds": [
+      "y26-3.3",
+      "y25-097"
+    ]
+  },
+  {
+    "primaryId": "y26-3.4",
+    "title": "Indexes; B-Tree / B+ Tree; Clustered vs Nonclustered",
+    "sourceIds": [
+      "y26-3.4",
+      "y25-095"
+    ]
+  },
+  {
+    "primaryId": "y26-3.5",
+    "title": "How Do You Implement Many-to-Many Relationships?",
+    "sourceIds": [
+      "y26-3.5",
+      "y25-083"
+    ]
+  },
+  {
+    "primaryId": "y26-3.6",
+    "title": "CAP Theorem",
+    "sourceIds": [
+      "y26-3.6",
+      "y25-098"
+    ]
+  },
+  {
+    "primaryId": "y26-3.7",
+    "title": "Optimistic vs Pessimistic Locking",
+    "sourceIds": [
+      "y26-3.7",
+      "y25-099"
+    ]
+  },
+  {
+    "primaryId": "y26-3.8",
+    "title": "Read vs Write Operations; CQRS",
+    "sourceIds": [
+      "y26-3.8"
+    ]
+  },
+  {
+    "primaryId": "y26-3.9",
+    "title": "Strong vs Eventual Consistency",
+    "sourceIds": [
+      "y26-3.9"
+    ]
+  },
+  {
+    "primaryId": "y26-3.10",
+    "title": "Persistent Storage vs In-Memory Cache",
+    "sourceIds": [
+      "y26-3.10"
+    ]
+  },
+  {
+    "primaryId": "y26-3.11",
+    "title": "Coding: SQL Using Fictional Customers and Orders",
+    "sourceIds": [
+      "y26-3.11",
+      "y25-090",
+      "y25-092",
+      "y25-extra-sql"
+    ]
+  },
+  {
+    "primaryId": "y26-3.12",
+    "title": "🟤 Database Replication, CDC, and Debezium",
+    "sourceIds": [
+      "y26-3.12"
+    ]
+  },
+  {
+    "primaryId": "y25-070",
+    "title": "What is SQL Injection? How to solve it?",
+    "sourceIds": [
+      "y25-070",
+      "y25-071",
+      "y25-072"
+    ]
+  },
+  {
+    "primaryId": "y25-073",
+    "title": "What is JdbcTemplate? And what are some of the advantages it has over standard JDBC?",
+    "sourceIds": [
+      "y25-073"
+    ]
+  },
+  {
+    "primaryId": "y25-074",
+    "title": "How to handle transactions manually in JDBC?",
+    "sourceIds": [
+      "y25-074"
+    ]
+  },
+  {
+    "primaryId": "y25-075",
+    "title": "What is ORM and what are its benefits?",
+    "sourceIds": [
+      "y25-075",
+      "y25-076",
+      "y25-086"
+    ]
+  },
+  {
+    "primaryId": "y25-077",
+    "title": "What is Session and SessionFactory in Hibernate?",
+    "sourceIds": [
+      "y25-077",
+      "y25-078"
+    ]
+  },
+  {
+    "primaryId": "y25-079",
+    "title": "What are the three Hibernate entity states?",
+    "sourceIds": [
+      "y25-079"
+    ]
+  },
+  {
+    "primaryId": "y25-080",
+    "title": "Difference between get() vs. load()",
+    "sourceIds": [
+      "y25-080"
+    ]
+  },
+  {
+    "primaryId": "y25-081",
+    "title": "Difference between update, merge, saveOrUpdate",
+    "sourceIds": [
+      "y25-081"
+    ]
+  },
+  {
+    "primaryId": "y25-082",
+    "title": "Why do we use flush(), clear(), and commit()?",
+    "sourceIds": [
+      "y25-082"
+    ]
+  },
+  {
+    "primaryId": "y25-087",
+    "title": "What is HQL and what is Criteria? What is type safe?",
+    "sourceIds": [
+      "y25-087"
+    ]
+  },
+  {
+    "primaryId": "y25-088",
+    "title": "Caching in Hibernate/What are first-level cache and second-level cache and how are they accessed?",
+    "sourceIds": [
+      "y25-088"
+    ]
+  },
+  {
+    "primaryId": "y25-093",
+    "title": "What is CTE?",
+    "sourceIds": [
+      "y25-093"
+    ]
+  },
+  {
+    "primaryId": "y25-094",
+    "title": "Explain the Stored Procedure and Trigger.",
+    "sourceIds": [
+      "y25-094"
+    ]
+  },
+  {
+    "primaryId": "y25-096",
+    "title": "What does the window function do? What are the differences between rank() and dense_rank()?",
+    "sourceIds": [
+      "y25-096"
+    ]
+  },
+  {
+    "primaryId": "y26-4.1",
+    "title": "★ Microservices vs Monoliths",
+    "sourceIds": [
+      "y26-4.1",
+      "y25-136"
+    ]
+  },
+  {
+    "primaryId": "y26-4.2",
+    "title": "★ Synchronous vs Asynchronous Communication",
+    "sourceIds": [
+      "y26-4.2",
+      "y25-139",
+      "y25-148",
+      "y25-161"
+    ]
+  },
+  {
+    "primaryId": "y26-4.3",
+    "title": "★ Cross-Service Transactions: Saga vs 2PC",
+    "sourceIds": [
+      "y26-4.3",
+      "y25-160",
+      "y25-162"
+    ]
+  },
+  {
+    "primaryId": "y26-4.4",
+    "title": "★ Basic Fault Tolerance: Timeout, Retry, Circuit Breaker, Bulkhead",
+    "sourceIds": [
+      "y26-4.4",
+      "y25-137",
+      "y25-138"
+    ]
+  },
+  {
+    "primaryId": "y26-4.5",
+    "title": "★ Performance Optimization Approach",
+    "sourceIds": [
+      "y26-4.5"
+    ]
+  },
+  {
+    "primaryId": "y26-4.6",
+    "title": "★ What Is Kafka? What Problems Does It Solve?",
+    "sourceIds": [
+      "y26-4.6",
+      "y25-158"
+    ]
+  },
+  {
+    "primaryId": "y26-4.7",
+    "title": "★ Consumer Groups; What If Consumers Outnumber Partitions?",
+    "sourceIds": [
+      "y26-4.7"
+    ]
+  },
+  {
+    "primaryId": "y26-4.8",
+    "title": "★ Offsets",
+    "sourceIds": [
+      "y26-4.8"
+    ]
+  },
+  {
+    "primaryId": "y26-4.9",
+    "title": "★ How Do You Handle Duplicate Messages?",
+    "sourceIds": [
+      "y26-4.9"
+    ]
+  },
+  {
+    "primaryId": "y26-4.10",
+    "title": "★ Kafka Components",
+    "sourceIds": [
+      "y26-4.10"
+    ]
+  },
+  {
+    "primaryId": "y26-4.11",
+    "title": "★ Ordering Guarantees",
+    "sourceIds": [
+      "y26-4.11"
+    ]
+  },
+  {
+    "primaryId": "y26-4.12",
+    "title": "★ Kafka vs RabbitMQ",
+    "sourceIds": [
+      "y26-4.12"
+    ]
+  },
+  {
+    "primaryId": "y26-4.13",
+    "title": "Keyed vs Unkeyed Partition Routing",
+    "sourceIds": [
+      "y26-4.13"
+    ]
+  },
+  {
+    "primaryId": "y26-4.14",
+    "title": "What Is a Broker?",
+    "sourceIds": [
+      "y26-4.14"
+    ]
+  },
+  {
+    "primaryId": "y26-4.15",
+    "title": "Replication Factor and ISR",
+    "sourceIds": [
+      "y26-4.15"
+    ]
+  },
+  {
+    "primaryId": "y26-4.16",
+    "title": "What Happens When a Consumer Fails?",
+    "sourceIds": [
+      "y26-4.16"
+    ]
+  },
+  {
+    "primaryId": "y26-4.17",
+    "title": "Retention Policies",
+    "sourceIds": [
+      "y26-4.17"
+    ]
+  },
+  {
+    "primaryId": "y26-4.18",
+    "title": "Producer ACK Levels",
+    "sourceIds": [
+      "y26-4.18"
+    ]
+  },
+  {
+    "primaryId": "y26-4.19",
+    "title": "Important Consumer Configuration",
+    "sourceIds": [
+      "y26-4.19"
+    ]
+  },
+  {
+    "primaryId": "y26-4.20",
+    "title": "Virtual Memory",
+    "sourceIds": [
+      "y26-4.20"
+    ]
+  },
+  {
+    "primaryId": "y26-4.21",
+    "title": "Throughput vs Latency",
+    "sourceIds": [
+      "y26-4.21"
+    ]
+  },
+  {
+    "primaryId": "y26-4.22",
+    "title": "Cache Access Patterns",
+    "sourceIds": [
+      "y26-4.22"
+    ]
+  },
+  {
+    "primaryId": "y26-4.23",
+    "title": "Cache Eviction Policies",
+    "sourceIds": [
+      "y26-4.23"
+    ]
+  },
+  {
+    "primaryId": "y26-4.24",
+    "title": "TTL Expiration: Lazy vs Active",
+    "sourceIds": [
+      "y26-4.24"
+    ]
+  },
+  {
+    "primaryId": "y26-4.25",
+    "title": "🟤 Advanced Fault Tolerance: Rate Limiting, Retry, Outbox",
+    "sourceIds": [
+      "y26-4.25"
+    ]
+  },
+  {
+    "primaryId": "y26-4.26",
+    "title": "🟤 Advanced Read Optimization",
+    "sourceIds": [
+      "y26-4.26"
+    ]
+  },
+  {
+    "primaryId": "y26-4.27",
+    "title": "🟤 Advanced Write Optimization",
+    "sourceIds": [
+      "y26-4.27"
+    ]
+  },
+  {
+    "primaryId": "y25-065",
+    "title": "Explain the API gateway design pattern",
+    "sourceIds": [
+      "y25-065",
+      "y25-142"
+    ]
+  },
+  {
+    "primaryId": "y25-146",
+    "title": "Design and Explain an End-to-End Microservice Architecture",
+    "sourceIds": [
+      "y25-146",
+      "y25-163",
+      "y25-164"
+    ]
+  },
+  {
+    "primaryId": "y25-149",
+    "title": "RabbitMQ: Components, Exchanges, Routing, and Dead Lettering",
+    "sourceIds": [
+      "y25-149",
+      "y25-150",
+      "y25-151",
+      "y25-152"
+    ]
+  },
+  {
+    "primaryId": "y26-5.1",
+    "title": "★ How Do CI/CD Tools Such as Jenkins or GitHub Actions Work?",
+    "sourceIds": [
+      "y26-5.1",
+      "y25-144",
+      "y25-145"
+    ]
+  },
+  {
+    "primaryId": "y26-5.2",
+    "title": "★ PR Workflow: Feature Branch → CI → Review → Merge → CD",
+    "sourceIds": [
+      "y26-5.2"
+    ]
+  },
+  {
+    "primaryId": "y26-5.3",
+    "title": "★ EC2, Instance Types, and Vertical Scaling",
+    "sourceIds": [
+      "y26-5.3"
+    ]
+  },
+  {
+    "primaryId": "y26-5.4",
+    "title": "★ Terraform / Infrastructure as Code",
+    "sourceIds": [
+      "y26-5.4",
+      "y26-5.22"
+    ]
+  },
+  {
+    "primaryId": "y26-5.5",
+    "title": "★ Autoscaling: Scale Out vs Scale In",
+    "sourceIds": [
+      "y26-5.5",
+      "y25-156"
+    ]
+  },
+  {
+    "primaryId": "y26-5.6",
+    "title": "ALB vs NLB",
+    "sourceIds": [
+      "y26-5.6"
+    ]
+  },
+  {
+    "primaryId": "y26-5.7",
+    "title": "S3",
+    "sourceIds": [
+      "y26-5.7"
+    ]
+  },
+  {
+    "primaryId": "y26-5.8",
+    "title": "AWS Lambda",
+    "sourceIds": [
+      "y26-5.8"
+    ]
+  },
+  {
+    "primaryId": "y26-5.9",
+    "title": "Service Registry",
+    "sourceIds": [
+      "y26-5.9"
+    ]
+  },
+  {
+    "primaryId": "y26-5.10",
+    "title": "Load Balancing and Health Checks in ECS / EKS",
+    "sourceIds": [
+      "y26-5.10"
+    ]
+  },
+  {
+    "primaryId": "y26-5.11",
+    "title": "Built-In vs Custom Autoscaling Metrics",
+    "sourceIds": [
+      "y26-5.11"
+    ]
+  },
+  {
+    "primaryId": "y26-5.12",
+    "title": "Rolling vs Blue-Green vs Canary Deployment",
+    "sourceIds": [
+      "y26-5.12"
+    ]
+  },
+  {
+    "primaryId": "y26-5.13",
+    "title": "Docker and Docker Images",
+    "sourceIds": [
+      "y26-5.13"
+    ]
+  },
+  {
+    "primaryId": "y26-5.14",
+    "title": "HTTP vs TCP vs UDP",
+    "sourceIds": [
+      "y26-5.14"
+    ]
+  },
+  {
+    "primaryId": "y26-5.15",
+    "title": "Public and Private Keys",
+    "sourceIds": [
+      "y26-5.15"
+    ]
+  },
+  {
+    "primaryId": "y26-5.16",
+    "title": "TLS / HTTPS",
+    "sourceIds": [
+      "y26-5.16"
+    ]
+  },
+  {
+    "primaryId": "y26-5.17",
+    "title": "External Requests, Service Calls, and Scaling in ECS / EKS",
+    "sourceIds": [
+      "y26-5.17"
+    ]
+  },
+  {
+    "primaryId": "y26-5.18",
+    "title": "Kubernetes Objects and Probes",
+    "sourceIds": [
+      "y26-5.18"
+    ]
+  },
+  {
+    "primaryId": "y26-5.19",
+    "title": "kubectl vs Helm Charts",
+    "sourceIds": [
+      "y26-5.19"
+    ]
+  },
+  {
+    "primaryId": "y26-5.20",
+    "title": "VPC",
+    "sourceIds": [
+      "y26-5.20"
+    ]
+  },
+  {
+    "primaryId": "y26-5.21",
+    "title": "VPN",
+    "sourceIds": [
+      "y26-5.21"
+    ]
+  },
+  {
+    "primaryId": "y25-157",
+    "title": "Tell me about your experience with Cloud Service. Ex. AWS, GCP, Azure",
+    "sourceIds": [
+      "y25-157"
+    ]
+  },
+  {
+    "primaryId": "y26-6.1",
+    "title": "★ How Do You Diagnose a Java Memory Leak?",
+    "sourceIds": [
+      "y26-6.1",
+      "y25-040"
+    ]
+  },
+  {
+    "primaryId": "y26-6.2",
+    "title": "ELK Stack",
+    "sourceIds": [
+      "y26-6.2",
+      "y25-159"
+    ]
+  },
+  {
+    "primaryId": "y26-6.3",
+    "title": "Prometheus and Grafana",
+    "sourceIds": [
+      "y26-6.3"
+    ]
+  },
+  {
+    "primaryId": "y26-6.4",
+    "title": "CloudWatch and CloudWatch Alarms",
+    "sourceIds": [
+      "y26-6.4"
+    ]
+  },
+  {
+    "primaryId": "y26-6.5",
+    "title": "Important Production Metrics",
+    "sourceIds": [
+      "y26-6.5",
+      "y25-141"
+    ]
+  },
+  {
+    "primaryId": "y26-6.6",
+    "title": "What Is a Heap Dump? When and How Do You Capture One?",
+    "sourceIds": [
+      "y26-6.6"
+    ]
+  },
+  {
+    "primaryId": "y25-147",
+    "title": "How to debug your microservice? (In other words, how to troubleshoot when there is an error in the microservice application?)",
+    "sourceIds": [
+      "y25-147"
+    ]
+  }
+]

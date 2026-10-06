@@ -1,0 +1,21 @@
+{
+  "originalQuestions": 304,
+  "originalEntries": 307,
+  "consolidatedTopics": 187,
+  "practiceTopics": 186,
+  "mergedEntries": 120,
+  "mergedTopics": 71,
+  "2025OnlyTopics": 49,
+  "2026PrimaryTopics": 138,
+  "categories": {
+    "1": 56,
+    "2": 46,
+    "3": 26,
+    "4": 30,
+    "5": 22,
+    "6": 7
+  },
+  "conceptExercises": 205,
+  "conceptCoveredTopics": 186,
+  "conceptUncoveredTopics": []
+}

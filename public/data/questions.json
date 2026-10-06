@@ -1,0 +1,4500 @@
+[
+  {
+    "id": "concept-001",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.1"
+    ],
+    "track": "concept",
+    "prompt": "How are IoC and dependency injection related?",
+    "options": [
+      "IoC is a design principle; DI is one way to implement it.",
+      "DI is a principle; IoC means field injection only.",
+      "IoC requires business code to instantiate every dependency.",
+      "DI primarily increases coupling between implementations."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "IoC delegates object creation and assembly to a container. DI supplies dependencies from outside, improving decoupling and testability."
+  },
+  {
+    "id": "concept-002",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.2"
+    ],
+    "track": "concept",
+    "prompt": "Match each bean declaration mechanism to its typical role.",
+    "options": [
+      [
+        "@Component",
+        "Register an application class through scanning"
+      ],
+      [
+        "@Bean",
+        "Register an object returned by a factory method"
+      ],
+      [
+        "@Configuration",
+        "Declare a bean configuration class"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Use @Bean when constructing third-party objects or when explicit configuration is needed."
+  },
+  {
+    "id": "concept-003",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.3"
+    ],
+    "track": "concept",
+    "prompt": "Which conveniences does Spring Boot provide?",
+    "options": [
+      "Auto-configuration",
+      "Starter dependencies",
+      "Embedded web servers",
+      "A guarantee that no application configuration is needed"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Spring Boot builds on Spring with conventions and automatic setup. Application-specific configuration is still necessary."
+  },
+  {
+    "id": "concept-004",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.4"
+    ],
+    "track": "concept",
+    "prompt": "What does ApplicationContext add to the basic BeanFactory abstraction?",
+    "options": [
+      "Application events, internationalization, and broader framework integration",
+      "It removes bean lifecycle management",
+      "It prevents access to beans",
+      "It only works inside web applications"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "ApplicationContext extends BeanFactory with richer application facilities. Lazy versus eager behavior is configurable, not an absolute distinction."
+  },
+  {
+    "id": "concept-005",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.5"
+    ],
+    "track": "concept",
+    "prompt": "Why prefer constructor injection for required dependencies?",
+    "options": [
+      "Required dependencies are explicit",
+      "Dependencies can be stored in final fields",
+      "Tests can construct objects directly",
+      "It automatically resolves every circular dependency"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Constructor injection makes dependencies visible and testable. Constructor cycles usually require design changes."
+  },
+  {
+    "id": "concept-006",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.6"
+    ],
+    "track": "concept",
+    "prompt": "A singleton receives a prototype bean through constructor injection. Does every method call get a new prototype?",
+    "options": [
+      "No. Use on-demand lookup such as ObjectProvider for repeated retrieval.",
+      "Yes. Every method invocation creates a new instance.",
+      "Yes. Every field read creates a new instance.",
+      "No. These scopes cannot depend on each other."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Normal injection happens once when the singleton is built. Scope does not change ordinary field access semantics."
+  },
+  {
+    "id": "concept-007",
+    "type": "order",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.7"
+    ],
+    "track": "concept",
+    "prompt": "Order the main lifecycle stages of a managed singleton bean. Aware callbacks and post-processors are omitted.",
+    "options": [
+      "Instantiate the bean",
+      "Inject its dependencies",
+      "Run initialization callbacks",
+      "Use the bean",
+      "Run destruction callbacks when the container closes"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "The full lifecycle also includes Aware callbacks and BeanPostProcessors. Prototype destruction is normally not managed by the container."
+  },
+  {
+    "id": "concept-008",
+    "type": "order",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.9"
+    ],
+    "track": "concept",
+    "prompt": "Order the stages of this conventional layered REST request.",
+    "options": [
+      "Controller receives and validates the request",
+      "Service executes business logic",
+      "Repository accesses the database",
+      "Map the result to a response DTO"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Layering separates HTTP concerns, business rules, and persistence. This describes one conventional flow, not every possible implementation."
+  },
+  {
+    "id": "concept-009",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.10"
+    ],
+    "track": "concept",
+    "prompt": "Two services require each other through their constructors. What is the preferred first response?",
+    "options": [
+      "Refactor responsibilities or extract a third collaborator",
+      "Add @Primary to both classes",
+      "Make every field static",
+      "Disable the unit tests"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Circular dependencies often indicate unclear boundaries. @Lazy or ObjectProvider can defer resolution but do not replace a design fix."
+  },
+  {
+    "id": "concept-010",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.11"
+    ],
+    "track": "concept",
+    "prompt": "Match each injection annotation to its role.",
+    "options": [
+      [
+        "@Qualifier",
+        "Select a specific candidate bean"
+      ],
+      [
+        "@Primary",
+        "Prefer one bean among multiple candidates"
+      ],
+      [
+        "@Autowired",
+        "Request automatic dependency injection"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Use @Qualifier for explicit selection or @Primary to establish a default candidate."
+  },
+  {
+    "id": "concept-011",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.12"
+    ],
+    "track": "concept",
+    "prompt": "What benefits can a bounded thread pool provide?",
+    "options": [
+      "Thread reuse",
+      "Controlled concurrency",
+      "Less thread-creation overhead",
+      "A guarantee that tasks are never rejected"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Bounded pools and queues can reject work under load. Queue size and rejection policies must be chosen deliberately."
+  },
+  {
+    "id": "concept-012",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.13"
+    ],
+    "track": "concept",
+    "prompt": "What is the central purpose of database connection pooling?",
+    "options": [
+      "Reuse and bound connections to reduce connection setup overhead",
+      "Cache every SQL result",
+      "Automatically eliminate slow queries",
+      "Allow an unlimited number of connections"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A connection pool manages connections. It is not a query-result cache or a substitute for query optimization."
+  },
+  {
+    "id": "concept-013",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.14"
+    ],
+    "track": "concept",
+    "prompt": "Match each REST error-handling element to its purpose.",
+    "options": [
+      [
+        "@RestControllerAdvice",
+        "Provide shared REST controller advice"
+      ],
+      [
+        "@ExceptionHandler",
+        "Handle a designated exception"
+      ],
+      [
+        "HTTP status code",
+        "Communicate response semantics to clients"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Return a stable error structure and choose a status code that reflects the failure."
+  },
+  {
+    "id": "concept-014",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.15"
+    ],
+    "track": "concept",
+    "prompt": "In default proxy-based Spring AOP, what usually happens on a direct internal call to a @Transactional method?",
+    "options": [
+      "The call bypasses the proxy, so transactional interception does not apply.",
+      "A new transaction is always created.",
+      "The code fails to compile.",
+      "Only private methods are intercepted."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Self-invocation is a common proxy limitation. Transaction advice is normally applied when calls go through the proxy."
+  },
+  {
+    "id": "concept-015",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.16"
+    ],
+    "track": "concept",
+    "prompt": "Which statements about request validation are correct?",
+    "options": [
+      "DTO fields can use @NotNull and @Size",
+      "@Valid can trigger validation of a request object",
+      "Validation failures should become suitable client error responses",
+      "@Valid automatically generates business-correct missing values"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Validation detects constraint violations. It does not invent missing business data."
+  },
+  {
+    "id": "concept-016",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.19"
+    ],
+    "track": "concept",
+    "prompt": "Match the three parts of a typical signed JWT.",
+    "options": [
+      [
+        "Header",
+        "Algorithm and related metadata"
+      ],
+      [
+        "Payload",
+        "Claims such as exp"
+      ],
+      [
+        "Signature",
+        "Integrity and signature verification"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Header and payload are Base64URL encoded, not automatically encrypted. Decoding is not signature verification."
+  },
+  {
+    "id": "concept-017",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.20"
+    ],
+    "track": "concept",
+    "prompt": "Which token-handling practices are appropriate?",
+    "options": [
+      "Use short-lived access tokens",
+      "Design a refresh-token revocation mechanism",
+      "Validate expiration and required claims",
+      "Trust a token whenever Base64 decoding succeeds"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Validate signatures, time constraints, and relevant issuer/audience requirements. Decoding alone provides no trust."
+  },
+  {
+    "id": "concept-018",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.21"
+    ],
+    "track": "concept",
+    "prompt": "Match the transformation to its defining property.",
+    "options": [
+      [
+        "Encoding",
+        "Reversible representation conversion"
+      ],
+      [
+        "Encryption",
+        "Confidentiality using cryptographic keys"
+      ],
+      [
+        "Hashing",
+        "One-way digest computation"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Base64 is encoding. Password storage requires an appropriate salted password-hashing algorithm, not just an arbitrary fast hash."
+  },
+  {
+    "id": "concept-019",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.22"
+    ],
+    "track": "concept",
+    "prompt": "Which exception normally triggers rollback with default Spring @Transactional settings?",
+    "options": [
+      "RuntimeException",
+      "Every checked exception, without configuration",
+      "Only IOException",
+      "No exception triggers rollback"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "By default, RuntimeException and Error trigger rollback. Configure rollbackFor when checked exceptions should also roll back."
+  },
+  {
+    "id": "concept-020",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.23"
+    ],
+    "track": "concept",
+    "prompt": "Which statements fit REST constraints?",
+    "options": [
+      "Each request contains the context needed to process it",
+      "Resources are accessed through a uniform interface",
+      "Client and server responsibilities are separated",
+      "The server must store conversational session state for every client"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Statelessness concerns client session context. It does not mean an application cannot store database state."
+  },
+  {
+    "id": "concept-021",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.24"
+    ],
+    "track": "concept",
+    "prompt": "Which capabilities are composed by @SpringBootApplication?",
+    "options": [
+      "Auto-configuration",
+      "Component scanning",
+      "Configuration-class declaration",
+      "Automatic transaction advice on every method"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Its core composition includes @SpringBootConfiguration, @EnableAutoConfiguration, and @ComponentScan."
+  },
+  {
+    "id": "concept-022",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.27"
+    ],
+    "track": "concept",
+    "prompt": "Requests are piling up and the service risks OOM. Which response is most appropriate?",
+    "options": [
+      "Use bounded queues, rate limits, and backpressure while investigating capacity",
+      "Make all queues unbounded",
+      "Retry every request without a limit",
+      "Only increase logging to TRACE"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Bounding accumulated work controls memory pressure. Pagination, chunking, and streaming can also reduce peak allocation."
+  },
+  {
+    "id": "concept-023",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.31"
+    ],
+    "track": "concept",
+    "prompt": "Match the configuration mechanism to its role.",
+    "options": [
+      [
+        "@ConfigurationProperties",
+        "Bind related properties into a typed object"
+      ],
+      [
+        "@Value",
+        "Inject an individual value or expression"
+      ],
+      [
+        "@Profile",
+        "Activate components for selected environments"
+      ]
+    ],
+    "answer": [],
+    "explanation": "ConfigurationProperties is well suited to grouped configuration and can be combined with validation."
+  },
+  {
+    "id": "concept-024",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.32"
+    ],
+    "track": "concept",
+    "prompt": "Match each JUnit 5 annotation.",
+    "options": [
+      [
+        "@Test",
+        "Declare a test method"
+      ],
+      [
+        "@BeforeEach",
+        "Run before each test"
+      ],
+      [
+        "@AfterEach",
+        "Run after each test"
+      ],
+      [
+        "@BeforeAll",
+        "Run once before tests in the class"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Lifecycle callbacks set up and clean up test fixtures."
+  },
+  {
+    "id": "concept-025",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.33"
+    ],
+    "track": "concept",
+    "prompt": "How can you stub a spy without invoking the real method during stubbing?",
+    "options": [
+      "doReturn(value).when(spy).method()",
+      "when(spy.method()).thenReturn(value) never calls the real method",
+      "Call spy.method() directly",
+      "@Mock automatically disables all methods on every spy"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The argument to when is evaluated first. doReturn-style stubbing avoids invoking the real spy method at setup time."
+  },
+  {
+    "id": "concept-026",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.38"
+    ],
+    "track": "concept",
+    "prompt": "Loading N entities and accessing an association triggers N additional queries. What is this called?",
+    "options": [
+      "The N+1 query problem",
+      "Circular dependency",
+      "Thread deadlock",
+      "Generic type erasure"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Consider fetch joins, EntityGraph, batching, or DTO projections based on the access pattern. Making every relation EAGER is not a universal fix."
+  },
+  {
+    "id": "concept-027",
+    "type": "order",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.40"
+    ],
+    "track": "concept",
+    "prompt": "Order these stages in a typical Spring MVC controller request.",
+    "options": [
+      "DispatcherServlet receives the request",
+      "HandlerMapping locates a handler",
+      "HandlerAdapter invokes the controller",
+      "Convert the return value and write the response"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "Interceptors and exception resolvers may also participate. REST responses commonly use HTTP message converters."
+  },
+  {
+    "id": "concept-028",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.41"
+    ],
+    "track": "concept",
+    "prompt": "Which approach is suitable for storing user passwords?",
+    "options": [
+      "A salted password-hashing algorithm such as BCrypt",
+      "Base64 encoding",
+      "Plain text for easy password recovery",
+      "Unsalted SHA-256 as the entire password-storage scheme"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Use a password-specific hashing algorithm with a suitable work factor. Password recovery should normally reset the password."
+  },
+  {
+    "id": "concept-029",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.46"
+    ],
+    "track": "concept",
+    "prompt": "Match each communication mechanism.",
+    "options": [
+      [
+        "Polling",
+        "The client periodically asks for updates"
+      ],
+      [
+        "SSE",
+        "The server streams events to the client over HTTP"
+      ],
+      [
+        "WebSocket",
+        "A bidirectional messaging channel"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Choose based on directionality and operational requirements. Not every real-time interface needs WebSocket."
+  },
+  {
+    "id": "concept-030",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.1"
+    ],
+    "track": "concept",
+    "prompt": "Why must equal HashMap keys have equal hashCode values?",
+    "options": [
+      "So equal keys can be located consistently in the hash structure",
+      "To ensure every distinct object has a unique hash",
+      "To make HashMap thread-safe",
+      "To preserve insertion order"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Hashing narrows lookup; equality distinguishes keys. Unequal keys are allowed to have hash collisions."
+  },
+  {
+    "id": "concept-031",
+    "type": "multi",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.2"
+    ],
+    "track": "concept",
+    "prompt": "Which approaches can implement a thread-safe singleton?",
+    "options": [
+      "An enum singleton",
+      "The initialization-on-demand holder idiom",
+      "Correct double-checked locking with volatile",
+      "Unsynchronized ordinary lazy initialization"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Holder initialization uses class-initialization guarantees. Double-checked locking requires correct synchronization and publication."
+  },
+  {
+    "id": "concept-032",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.3"
+    ],
+    "track": "concept",
+    "prompt": "Match each throwable category to an example.",
+    "options": [
+      [
+        "Checked exception",
+        "IOException"
+      ],
+      [
+        "Unchecked exception",
+        "NullPointerException"
+      ],
+      [
+        "Error",
+        "OutOfMemoryError"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Checked exceptions must be caught or declared. RuntimeException subclasses are unchecked."
+  },
+  {
+    "id": "concept-033",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.4"
+    ],
+    "track": "concept",
+    "prompt": "What is the essential constraint of a functional interface?",
+    "options": [
+      "One abstract method; default and static methods are permitted",
+      "One method total, with no default methods",
+      "It must extend Thread",
+      "It must declare two abstract methods"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A functional interface supplies a target type for a lambda. Public Object methods do not count toward this abstract-method constraint."
+  },
+  {
+    "id": "concept-034",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.5"
+    ],
+    "track": "concept",
+    "prompt": "Match each comparison interface to its method.",
+    "options": [
+      [
+        "Comparable<T>",
+        "compareTo(T other)"
+      ],
+      [
+        "Comparator<T>",
+        "compare(T a, T b)"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Comparable defines a natural ordering; Comparator provides an external ordering strategy."
+  },
+  {
+    "id": "concept-035",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.6"
+    ],
+    "track": "concept",
+    "prompt": "Match the OOP principle to its meaning.",
+    "options": [
+      [
+        "Encapsulation",
+        "Hide internal state and control access"
+      ],
+      [
+        "Inheritance",
+        "Establish a subtype relationship"
+      ],
+      [
+        "Polymorphism",
+        "Invoke different implementations through a common abstraction"
+      ],
+      [
+        "Abstraction",
+        "Expose essential behavior while hiding implementation detail"
+      ]
+    ],
+    "answer": [],
+    "explanation": "These principles address different design concerns. Inheritance is not the only way to reuse behavior."
+  },
+  {
+    "id": "concept-036",
+    "type": "multi",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.7"
+    ],
+    "track": "concept",
+    "prompt": "Which concurrency statements are correct?",
+    "options": [
+      "synchronized provides mutual exclusion and visibility guarantees",
+      "volatile does not make count++ atomic",
+      "A consistent lock-acquisition order can reduce deadlock risk",
+      "More threads always increase throughput linearly"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Increment is a read-modify-write operation. Throughput is constrained by CPU, I/O, contention, and other resources."
+  },
+  {
+    "id": "concept-037",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.9"
+    ],
+    "track": "concept",
+    "prompt": "Which statement about ConcurrentHashMap is correct?",
+    "options": [
+      "It disallows both null keys and null values.",
+      "It allows null keys but not null values.",
+      "Every operation uses one global map lock.",
+      "Every traversal throws ConcurrentModificationException."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "ConcurrentHashMap supports concurrent access. Historical segmented implementations should not be assumed for all Java versions."
+  },
+  {
+    "id": "concept-038",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.10"
+    ],
+    "track": "concept",
+    "prompt": "Match each CompletableFuture composition method.",
+    "options": [
+      [
+        "thenApply",
+        "Transform a stage result into a value"
+      ],
+      [
+        "thenCompose",
+        "Flatten a function that returns another stage"
+      ],
+      [
+        "thenCombine",
+        "Combine results from two stages"
+      ]
+    ],
+    "answer": [],
+    "explanation": "thenCompose is useful for dependent asynchronous work; thenCombine combines two results."
+  },
+  {
+    "id": "concept-039",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.11"
+    ],
+    "track": "concept",
+    "prompt": "What does Optional.ofNullable(null) return?",
+    "options": [
+      "Optional.empty()",
+      "A NullPointerException",
+      "An Optional containing the string null",
+      "A nonempty Optional containing null"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Optional.of(null) throws, whereas ofNullable maps a null input to an empty Optional."
+  },
+  {
+    "id": "concept-040",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.12"
+    ],
+    "track": "concept",
+    "prompt": "Match each collection abstraction.",
+    "options": [
+      [
+        "List",
+        "An ordered sequence that can contain duplicates"
+      ],
+      [
+        "Set",
+        "Elements without duplicates"
+      ],
+      [
+        "Map",
+        "Key-to-value associations"
+      ],
+      [
+        "Queue",
+        "Elements held for processing"
+      ]
+    ],
+    "answer": [],
+    "explanation": "A Queue is not necessarily FIFO; PriorityQueue orders elements by priority."
+  },
+  {
+    "id": "concept-041",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.13"
+    ],
+    "track": "concept",
+    "prompt": "Which interface must a try-with-resources resource implement?",
+    "options": [
+      "AutoCloseable",
+      "Runnable",
+      "Comparable",
+      "Serializable"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "AutoCloseable supplies close(). Multiple resources are normally closed in reverse declaration order."
+  },
+  {
+    "id": "concept-042",
+    "type": "multi",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.15"
+    ],
+    "track": "concept",
+    "prompt": "Which practices support immutability?",
+    "options": [
+      "Prevent subclasses from violating invariants",
+      "Do not expose mutable internal objects",
+      "Defensively copy mutable inputs",
+      "A final reference alone guarantees deep immutability"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "final prevents reassignment of the reference; it does not freeze the referenced object."
+  },
+  {
+    "id": "concept-043",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.19"
+    ],
+    "track": "concept",
+    "prompt": "Match these SOLID principles.",
+    "options": [
+      [
+        "Single Responsibility",
+        "One primary reason for a class to change"
+      ],
+      [
+        "Open/Closed",
+        "Open for extension, closed for modification"
+      ],
+      [
+        "Liskov Substitution",
+        "Subtypes must remain substitutable"
+      ],
+      [
+        "Dependency Inversion",
+        "High- and low-level modules depend on abstractions"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Interface Segregation additionally avoids forcing clients to depend on methods they do not need."
+  },
+  {
+    "id": "concept-044",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.20"
+    ],
+    "track": "concept",
+    "prompt": "How should you normally compare the contents of two non-null Strings?",
+    "options": [
+      "equals()",
+      "==",
+      "Equality of System.identityHashCode() values",
+      "Compare their variable names"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "== compares references; String.equals compares character content."
+  },
+  {
+    "id": "concept-045",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.22"
+    ],
+    "track": "concept",
+    "prompt": "Match each JVM memory concept.",
+    "options": [
+      [
+        "Heap",
+        "Memory typically containing GC-managed objects"
+      ],
+      [
+        "Stack",
+        "Thread-local method call frames"
+      ],
+      [
+        "StackOverflowError",
+        "Often caused by excessive call depth"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Stack frames include local variables and an operand stack. Runtime optimizations can affect concrete layouts."
+  },
+  {
+    "id": "concept-046",
+    "type": "order",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.23"
+    ],
+    "track": "concept",
+    "prompt": "Filter adults, sort Person objects by age, and collect their names. Order the pipeline.",
+    "options": [
+      "Create a stream of Person objects",
+      "filter: retain age >= 18",
+      "sorted: compare Person::getAge",
+      "map: extract each name",
+      "collect: produce the result list"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "After mapping to String, Person::getAge is no longer a valid comparator. This corrects the type-order issue in the 2025 STREAM supplement."
+  },
+  {
+    "id": "concept-047",
+    "type": "match",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.2"
+    ],
+    "track": "concept",
+    "prompt": "Match each ACID property.",
+    "options": [
+      [
+        "Atomicity",
+        "All transaction operations succeed or roll back together"
+      ],
+      [
+        "Consistency",
+        "Transactions preserve valid states and constraints"
+      ],
+      [
+        "Isolation",
+        "Control interference between concurrent transactions"
+      ],
+      [
+        "Durability",
+        "Committed results persist"
+      ]
+    ],
+    "answer": [],
+    "explanation": "ACID consistency is not the same concept as consistency in CAP."
+  },
+  {
+    "id": "concept-048",
+    "type": "multi",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.3"
+    ],
+    "track": "concept",
+    "prompt": "Which actions are appropriate when investigating slow SQL?",
+    "options": [
+      "Inspect execution plans and measured latency",
+      "Evaluate indexes and result-set size",
+      "Check lock waits and connection-pool pressure",
+      "Index every column without measuring anything"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Indexes have write and storage costs. Let measurements guide optimization."
+  },
+  {
+    "id": "concept-049",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.5"
+    ],
+    "track": "concept",
+    "prompt": "How is a relational many-to-many relationship usually represented?",
+    "options": [
+      "A junction table containing foreign keys to both sides",
+      "A comma-separated string containing every related key",
+      "It must be moved to a NoSQL database",
+      "Each side must contain exactly one row"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Use appropriate uniqueness constraints. A relationship with business attributes is often modeled as an explicit association entity."
+  },
+  {
+    "id": "concept-050",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.6"
+    ],
+    "track": "concept",
+    "prompt": "What is the central CAP trade-off during a network partition?",
+    "options": [
+      "Strong consistency and availability cannot both be guaranteed.",
+      "Every system always chooses any two letters regardless of conditions.",
+      "SQL databases cannot experience partitions.",
+      "Adding a cache eliminates all trade-offs."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The trade-off concerns behavior during a partition; it is not an unrestricted choose-any-two rule."
+  },
+  {
+    "id": "concept-051",
+    "type": "match",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.7"
+    ],
+    "track": "concept",
+    "prompt": "Match each locking strategy.",
+    "options": [
+      [
+        "Optimistic locking",
+        "Compare a version and fail or retry on conflict"
+      ],
+      [
+        "Pessimistic locking",
+        "Acquire a lock before protected operations"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Optimistic locking commonly uses a version column; pessimistic locking may use SELECT FOR UPDATE."
+  },
+  {
+    "id": "concept-052",
+    "type": "order",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.10"
+    ],
+    "track": "concept",
+    "prompt": "Order a typical cache-aside read on a cache miss.",
+    "options": [
+      "Look up the cache",
+      "Determine that the entry is missing",
+      "Read the database",
+      "Populate the cache with the result",
+      "Return the result to the caller"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "This is the simplified miss path. Real systems also need invalidation, stampede prevention, and null-result policies."
+  },
+  {
+    "id": "concept-053",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.3"
+    ],
+    "track": "concept",
+    "prompt": "How can a business transaction span independent service databases?",
+    "options": [
+      "Use a Saga with local transactions and compensating actions",
+      "A normal local @Transactional automatically covers every service",
+      "HTTP provides atomic distributed commit by default",
+      "Compensation always performs a physical database rollback"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A Saga restores business consistency through compensation. Real-world side effects may not be perfectly reversible."
+  },
+  {
+    "id": "concept-054",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.4"
+    ],
+    "track": "concept",
+    "prompt": "Match each fault-tolerance mechanism.",
+    "options": [
+      [
+        "Timeout",
+        "Bound the wait for a downstream operation"
+      ],
+      [
+        "Circuit breaker",
+        "Fail fast when downstream failures persist"
+      ],
+      [
+        "Bulkhead",
+        "Isolate resource pools to limit failure spread"
+      ],
+      [
+        "Retry",
+        "Attempt an operation again under suitable conditions"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Bound retries and combine them with backoff and idempotency to avoid amplifying failures."
+  },
+  {
+    "id": "concept-055",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.7"
+    ],
+    "track": "concept",
+    "prompt": "A consumer group has five consumers and subscribes only to a topic with three partitions. What happens?",
+    "options": [
+      "At most three consumers receive partitions; the others are idle.",
+      "All five consumers simultaneously own every partition.",
+      "Kafka automatically increases the partition count to five.",
+      "Every consumer stops working."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Within one group, a partition is assigned to one consumer at a time."
+  },
+  {
+    "id": "concept-056",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.8"
+    ],
+    "track": "concept",
+    "prompt": "What does a committed Kafka offset normally identify?",
+    "options": [
+      "The next position for the group to read in a partition",
+      "The global number of messages across all topics",
+      "A business entity primary key",
+      "The IP address of a broker"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Offsets are partition-specific. The timing of processing versus committing affects replay and loss risks."
+  },
+  {
+    "id": "concept-057",
+    "type": "multi",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.9"
+    ],
+    "track": "concept",
+    "prompt": "Which strategies help limit the business impact of duplicate messages?",
+    "options": [
+      "Business idempotency keys",
+      "Unique constraints or a deduplication table",
+      "Producer idempotence where appropriate",
+      "Assume acks=all guarantees exactly one write to an external database"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Producer idempotence does not guarantee exactly-once external database effects. Consumers still need appropriate safeguards."
+  },
+  {
+    "id": "concept-058",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.11"
+    ],
+    "track": "concept",
+    "prompt": "At what scope does Kafka primarily guarantee message order?",
+    "options": [
+      "Within a single partition",
+      "Globally across every topic",
+      "Globally across all consumer groups",
+      "Across every partition in the cluster"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Related keys are commonly routed to one partition. Partition-count changes and partitioner behavior must be considered."
+  },
+  {
+    "id": "concept-059",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.18"
+    ],
+    "track": "concept",
+    "prompt": "Match each Kafka producer acknowledgment setting.",
+    "options": [
+      [
+        "acks=0",
+        "Do not wait for broker acknowledgment"
+      ],
+      [
+        "acks=1",
+        "Wait for the leader acknowledgment"
+      ],
+      [
+        "acks=all",
+        "Require the current in-sync replicas to acknowledge"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Durability and availability also depend on replication factor and min.insync.replicas."
+  },
+  {
+    "id": "concept-060",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.23"
+    ],
+    "track": "concept",
+    "prompt": "Match each eviction strategy.",
+    "options": [
+      [
+        "LRU",
+        "Evict the least recently used entry"
+      ],
+      [
+        "LFU",
+        "Evict entries used least frequently"
+      ],
+      [
+        "FIFO",
+        "Evict the earliest inserted entry first"
+      ]
+    ],
+    "answer": [],
+    "explanation": "TTL expiration and memory-pressure eviction are related but distinct mechanisms."
+  },
+  {
+    "id": "concept-061",
+    "type": "order",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.25"
+    ],
+    "track": "concept",
+    "prompt": "Order a typical transactional outbox flow.",
+    "options": [
+      "Write business data and an outbox record in one local transaction",
+      "Commit the local transaction",
+      "A relay reads or captures committed outbox records",
+      "Publish the event to the messaging system",
+      "The consumer handles the event idempotently"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "The outbox avoids an unsafe database/message dual write. Publication may still repeat, so consumption should be idempotent."
+  },
+  {
+    "id": "concept-062",
+    "type": "order",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.2"
+    ],
+    "track": "concept",
+    "prompt": "Order this project's PR delivery workflow.",
+    "options": [
+      "Create a feature branch and commit changes",
+      "Open a pull request",
+      "Pass CI checks and complete code review",
+      "Merge into the main branch",
+      "Run the deployment pipeline"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "CI and review can run concurrently, so they are grouped into one stage here."
+  },
+  {
+    "id": "concept-063",
+    "type": "match",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.5"
+    ],
+    "track": "concept",
+    "prompt": "Match each scaling direction.",
+    "options": [
+      [
+        "Scale out",
+        "Increase the number of instances"
+      ],
+      [
+        "Scale in",
+        "Decrease the number of instances"
+      ],
+      [
+        "Scale up",
+        "Increase resources per instance"
+      ],
+      [
+        "Scale down",
+        "Decrease resources per instance"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Horizontal scaling changes instance count; vertical scaling changes per-instance capacity."
+  },
+  {
+    "id": "concept-064",
+    "type": "match",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.6"
+    ],
+    "track": "concept",
+    "prompt": "Match each AWS service to its role.",
+    "options": [
+      [
+        "ALB",
+        "Application-layer HTTP routing"
+      ],
+      [
+        "NLB",
+        "Transport-layer load balancing"
+      ],
+      [
+        "S3",
+        "Object storage"
+      ],
+      [
+        "EC2",
+        "Virtual machine compute"
+      ]
+    ],
+    "answer": [],
+    "explanation": "These services serve different infrastructure needs. Choose based on the workload."
+  },
+  {
+    "id": "concept-065",
+    "type": "match",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.12"
+    ],
+    "track": "concept",
+    "prompt": "Match each deployment strategy.",
+    "options": [
+      [
+        "Rolling",
+        "Replace instances gradually"
+      ],
+      [
+        "Blue-green",
+        "Maintain two environments and switch traffic"
+      ],
+      [
+        "Canary",
+        "Send a small share of traffic to the new version first"
+      ]
+    ],
+    "answer": [],
+    "explanation": "All strategies need health checks and rollback plans. Blue-green commonly requires extra environment capacity."
+  },
+  {
+    "id": "concept-066",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.13"
+    ],
+    "track": "concept",
+    "prompt": "How are a Docker image and a container related?",
+    "options": [
+      "An image is a template; a container is a running instance.",
+      "An image is the live operating-system process.",
+      "Each container must include a separate OS kernel.",
+      "Starting a container automatically rewrites the source image."
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Images contain layered filesystem content. Containers add runtime state and a writable layer."
+  },
+  {
+    "id": "concept-067",
+    "type": "match",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.18"
+    ],
+    "track": "concept",
+    "prompt": "Match each Kubernetes probe.",
+    "options": [
+      [
+        "Liveness",
+        "Determine whether a container should be restarted"
+      ],
+      [
+        "Readiness",
+        "Determine whether the workload should receive traffic"
+      ],
+      [
+        "Startup",
+        "Check a potentially slow-starting application"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Readiness failures normally remove the workload from service endpoints; they do not by themselves restart the container."
+  },
+  {
+    "id": "concept-068",
+    "type": "order",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.4"
+    ],
+    "track": "concept",
+    "prompt": "Order a basic first-use Terraform workflow.",
+    "options": [
+      "Write infrastructure configuration",
+      "Run terraform init",
+      "Run terraform plan",
+      "Review the proposed changes",
+      "Run terraform apply"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Apply reviewed changes and protect state and sensitive information."
+  },
+  {
+    "id": "concept-069",
+    "type": "order",
+    "category": 6,
+    "sourceIds": [
+      "y26-6.1"
+    ],
+    "track": "concept",
+    "prompt": "Order a typical Java memory-leak investigation.",
+    "options": [
+      "Confirm persistent growth and suspicious GC behavior in metrics",
+      "Capture a heap dump at an appropriate time",
+      "Inspect retained objects and paths to GC roots",
+      "Fix references that retain objects unnecessarily",
+      "Retest and verify that memory stabilizes"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Rising heap usage alone does not prove a leak. Consider post-GC live data, workload, and retained references."
+  },
+  {
+    "id": "concept-070",
+    "type": "match",
+    "category": 6,
+    "sourceIds": [
+      "y26-6.2"
+    ],
+    "track": "concept",
+    "prompt": "Match the ELK components.",
+    "options": [
+      [
+        "Elasticsearch",
+        "Index and search logs"
+      ],
+      [
+        "Logstash",
+        "Ingest and transform logs"
+      ],
+      [
+        "Kibana",
+        "Explore and visualize logs"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Structured logging and correlation identifiers make centralized logs more useful for investigations."
+  },
+  {
+    "id": "concept-071",
+    "type": "match",
+    "category": 6,
+    "sourceIds": [
+      "y26-6.3"
+    ],
+    "track": "concept",
+    "prompt": "Match each observability component.",
+    "options": [
+      [
+        "Prometheus",
+        "Collect and query time-series metrics"
+      ],
+      [
+        "Grafana",
+        "Build visual dashboards"
+      ],
+      [
+        "Alertmanager",
+        "Group and route alert notifications"
+      ]
+    ],
+    "answer": [],
+    "explanation": "These components can form a metrics, visualization, and notification pipeline."
+  },
+  {
+    "id": "concept-072",
+    "type": "multi",
+    "category": 6,
+    "sourceIds": [
+      "y26-6.5"
+    ],
+    "track": "concept",
+    "prompt": "Which signals should be considered together when assessing service health?",
+    "options": [
+      "Request latency and error rate",
+      "Throughput",
+      "CPU, heap use, and garbage collection",
+      "Only whether the process exists"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "A live process can still fail requests. Assess user-facing behavior, traffic, and resource signals together."
+  },
+  {
+    "id": "concept-v2-datasource",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.8"
+    ],
+    "track": "concept",
+    "prompt": "A Boot service cannot connect to its database. Which configuration should you verify first?",
+    "options": [
+      "JDBC driver, datasource URL, credentials, and network reachability",
+      "Only the Controller request mapping",
+      "Only the logging pattern",
+      "Whether every entity implements Runnable"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Database access needs a suitable driver and correctly configured DataSource. Entity mappings do not fix a wrong endpoint or unavailable network."
+  },
+  {
+    "id": "concept-v2-authentication",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.17"
+    ],
+    "track": "concept",
+    "prompt": "A JWT decodes successfully but its signature does not validate. How should a protected endpoint handle it?",
+    "options": [
+      "Reject authentication; readable claims do not establish trust",
+      "Trust the subject because Base64 decoding worked",
+      "Allow it if its role string says ADMIN",
+      "Ignore signature checks whenever HTTPS is used"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Decoding reveals claims; signature and required claim checks establish whether the token can be trusted."
+  },
+  {
+    "id": "concept-v2-authorization",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.18"
+    ],
+    "track": "concept",
+    "prompt": "A valid token identifies a user who lacks the required authority. What is the usual REST result?",
+    "options": [
+      "403 Forbidden",
+      "200 because the signature is valid",
+      "404 for every authorization failure by definition",
+      "A new administrator token"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Authentication and authorization are distinct. A valid identity can still lack permission; 403 is the conventional forbidden response."
+  },
+  {
+    "id": "concept-v2-secret-config",
+    "type": "multi",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.25"
+    ],
+    "track": "concept",
+    "prompt": "Which practices help protect application secrets?",
+    "options": [
+      "Inject secrets through a controlled secret-management mechanism",
+      "Rotate credentials and restrict access",
+      "Keep the decryption key separate from encrypted configuration",
+      "Commit the plaintext fallback password beside an encrypted value"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Encrypting a property is insufficient if its key or plaintext fallback is exposed alongside it."
+  },
+  {
+    "id": "concept-v2-actuator",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.26"
+    ],
+    "track": "concept",
+    "prompt": "You want health and metrics endpoints for a Spring Boot service. Which facility is designed for this?",
+    "options": [
+      "Actuator with appropriate endpoint exposure and access controls",
+      "A public endpoint returning every environment variable",
+      "A database trigger",
+      "A Mockito spy in production"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Actuator provides operational endpoints. Enable only needed endpoints and control access to sensitive information."
+  },
+  {
+    "id": "concept-v2-api-version",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.28"
+    ],
+    "track": "concept",
+    "prompt": "Old clients depend on a response field you want to rename. What best preserves compatibility?",
+    "options": [
+      "Introduce a compatible transition or version and deprecate the old contract deliberately",
+      "Rename it immediately because the server still compiles",
+      "Change GET to POST without telling clients",
+      "Require clients to inspect your database schema"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Compatibility is defined by client contracts, not whether the provider builds. Versioning and deprecation need an explicit migration path."
+  },
+  {
+    "id": "concept-v2-profiles",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.29"
+    ],
+    "track": "concept",
+    "prompt": "Match each environment-configuration mechanism.",
+    "options": [
+      [
+        "@Profile",
+        "Conditionally register a component"
+      ],
+      [
+        "application-prod.yml",
+        "Provide profile-specific properties"
+      ],
+      [
+        "spring.profiles.active",
+        "Select active profiles"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Profile-specific values and conditional beans are related but different mechanisms."
+  },
+  {
+    "id": "concept-v2-breaker-states",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.30"
+    ],
+    "track": "concept",
+    "prompt": "Match circuit-breaker states to their behavior.",
+    "options": [
+      [
+        "Closed",
+        "Allow calls while measuring failures"
+      ],
+      [
+        "Open",
+        "Reject calls without contacting the protected downstream"
+      ],
+      [
+        "Half-open",
+        "Allow limited probes to evaluate recovery"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Half-open probing prevents sending full traffic back to a dependency before recovery has been assessed."
+  },
+  {
+    "id": "concept-v2-service-unit-test",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.34"
+    ],
+    "track": "concept",
+    "prompt": "For a focused unit test of a price-calculation service, how should you usually handle its repository?",
+    "options": [
+      "Inject a mock or fake and test the service behavior",
+      "Require a running production database",
+      "Start every microservice in the organization",
+      "Test only the repository SQL and skip service assertions"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A service unit test isolates its business rules. Integration tests separately verify real persistence and wiring."
+  },
+  {
+    "id": "concept-v2-controller-test",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.35"
+    ],
+    "track": "concept",
+    "prompt": "Which test most directly checks request validation and HTTP status mapping for an MVC controller?",
+    "options": [
+      "A focused MVC test using MockMvc and controlled collaborators",
+      "Calling only a private helper by reflection",
+      "Checking that the database server starts",
+      "Mocking the controller method itself and asserting its stub"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Controller tests should exercise binding, validation, routing, and response behavior rather than stub away the unit under test."
+  },
+  {
+    "id": "concept-v2-private-test",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.36"
+    ],
+    "track": "concept",
+    "prompt": "A private method contains complicated business rules. What is the preferred testing approach?",
+    "options": [
+      "Test observable public behavior or extract a focused collaborator",
+      "Make every method public just to expose internals",
+      "Assert only the private method name",
+      "Always use reflection as the first choice"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Tests tied to private structure are brittle. Difficult-to-test logic may indicate a responsibility worth extracting."
+  },
+  {
+    "id": "concept-v2-void-test",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.37"
+    ],
+    "track": "concept",
+    "prompt": "A void service method sends a notification. What should its unit test assert?",
+    "options": [
+      "The expected collaborator call or observable state change",
+      "That the method returns true",
+      "That it returns a non-null object",
+      "Nothing, because void methods cannot be tested"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Void means no return value, not no behavior. Verify appropriate interactions and exceptional outcomes."
+  },
+  {
+    "id": "concept-v2-fetch-plan",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.39"
+    ],
+    "track": "concept",
+    "prompt": "Changing every relationship to EAGER is proposed as a universal N+1 fix. What is the best response?",
+    "options": [
+      "Choose a fetch plan for each access pattern and inspect the resulting queries",
+      "EAGER guarantees exactly one SQL query",
+      "LAZY prevents any database access forever",
+      "All entity relationships must use the same fetch mode"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Fetch timing and SQL query shape are different concerns. Fetch joins, graphs, batching, or projections may be appropriate."
+  },
+  {
+    "id": "concept-v2-central-config",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.42"
+    ],
+    "track": "concept",
+    "prompt": "Several services need consistent environment settings. What is a useful role for centralized configuration?",
+    "options": [
+      "Distribute versioned environment settings with controlled access and rollout",
+      "Automatically make every remote operation transactional",
+      "Remove all need for secret access control",
+      "Guarantee zero configuration mistakes without validation"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Central delivery improves consistency, but validation, secret protection, and rollout behavior still need design."
+  },
+  {
+    "id": "concept-v2-polling",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.44"
+    ],
+    "track": "concept",
+    "prompt": "A dashboard needs updates only once a minute. Which statement is most reasonable?",
+    "options": [
+      "Polling may be sufficient; choose based on latency and operational needs",
+      "WebSocket is mandatory for every dashboard",
+      "Polling means the server pushes without requests",
+      "Streaming eliminates all reconnection logic"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Avoid assuming one transport fits all update rates. Streaming improves some latency/use cases but adds lifecycle concerns."
+  },
+  {
+    "id": "concept-v2-fail-fast",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.45"
+    ],
+    "track": "concept",
+    "prompt": "A required payment endpoint is missing from configuration. What is fail-fast behavior?",
+    "options": [
+      "Reject startup with a clear validation error",
+      "Accept traffic and fail randomly when payments arrive",
+      "Silently replace it with an unrelated URL",
+      "Keep retrying the missing value forever"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Fail-fast surfaces an invalid prerequisite early, where the failure is easier to diagnose."
+  },
+  {
+    "id": "concept-v2-crud-api",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.47"
+    ],
+    "track": "concept",
+    "prompt": "A successful POST creates a resource with a new identifier. Which response most clearly communicates this?",
+    "options": [
+      "201 Created with a Location pointing to the new resource",
+      "204 with a mandatory JSON body",
+      "500 because the identifier did not exist before",
+      "Always 200 with an exception stack trace"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "201 signals creation and Location can identify the new resource. Keep validation, persistence, and response mapping in clear layers."
+  },
+  {
+    "id": "concept-v2-jpa-owning-side",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y26-1.48"
+    ],
+    "track": "concept",
+    "prompt": "In a bidirectional Parent.children / Child.parent mapping with a foreign key on Child, which side normally owns it?",
+    "options": [
+      "Child.parent with @ManyToOne; Parent.children can use mappedBy",
+      "Both sides independently write unrelated foreign keys",
+      "The field with the longest name",
+      "The @OneToMany side must always own every association"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "mappedBy identifies the inverse side. Keep both in-memory sides consistent, but database relationship updates follow the owning mapping."
+  },
+  {
+    "id": "concept-v2-rest-controller",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y25-115"
+    ],
+    "track": "concept",
+    "prompt": "What does @RestController combine conceptually?",
+    "options": [
+      "Controller handling with response-body semantics",
+      "Repository creation and database pooling",
+      "Only template-name resolution",
+      "A requirement to use XML for every response"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "RestController combines Controller and ResponseBody semantics; return values are normally written through message converters."
+  },
+  {
+    "id": "concept-v2-http-client",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y25-116"
+    ],
+    "track": "concept",
+    "prompt": "Match each communication role.",
+    "options": [
+      [
+        "RestTemplate",
+        "Synchronous Spring HTTP client"
+      ],
+      [
+        "REST controller",
+        "Receives HTTP requests"
+      ],
+      [
+        "Repository",
+        "Accesses persistence abstractions"
+      ]
+    ],
+    "answer": [],
+    "explanation": "RestTemplate calls remote HTTP endpoints; it is not itself a controller or a persistence repository."
+  },
+  {
+    "id": "concept-v2-body-annotations",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y25-117"
+    ],
+    "track": "concept",
+    "prompt": "Match each Spring MVC annotation.",
+    "options": [
+      [
+        "@RequestBody",
+        "Deserialize the HTTP request body into a parameter"
+      ],
+      [
+        "@ResponseBody",
+        "Write a return value to the HTTP response body"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Message converters bridge HTTP body representations and Java objects."
+  },
+  {
+    "id": "concept-v2-path-query",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y25-118"
+    ],
+    "track": "concept",
+    "prompt": "For GET /orders/42?includeItems=true, which mapping is appropriate?",
+    "options": [
+      "@PathVariable for 42 and @RequestParam for includeItems",
+      "@RequestBody for both values without a body",
+      "@PathVariable for includeItems only",
+      "@Autowired for the order identifier"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "PathVariable binds URI-template segments; RequestParam binds query/form parameters."
+  },
+  {
+    "id": "concept-v2-spring-data",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y25-119"
+    ],
+    "track": "concept",
+    "prompt": "Which statement distinguishes a Spring Data repository from the @Repository annotation?",
+    "options": [
+      "A Spring Data interface can receive a generated implementation; @Repository is a persistence stereotype",
+      "Annotating any interface with @Repository automatically generates every SQL query",
+      "@Repository makes all fields persistent",
+      "Spring Data repositories cannot declare derived query methods"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Do not confuse a stereotype annotation with Spring Data repository infrastructure and its interface-based implementations."
+  },
+  {
+    "id": "concept-v2-test-levels",
+    "type": "match",
+    "category": 1,
+    "sourceIds": [
+      "y25-129"
+    ],
+    "track": "concept",
+    "prompt": "Match each test scope.",
+    "options": [
+      [
+        "Unit test",
+        "Exercise a focused unit with controlled collaborators"
+      ],
+      [
+        "Integration test",
+        "Verify real components working together"
+      ]
+    ],
+    "answer": [],
+    "explanation": "A test that exercises actual database mapping and transaction integration is broader than an isolated service-unit test."
+  },
+  {
+    "id": "concept-v2-coverage",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y25-133"
+    ],
+    "track": "concept",
+    "prompt": "A report shows 100% line coverage. What does that establish?",
+    "options": [
+      "The measured lines were executed, not that behavior was correctly asserted",
+      "Every possible input was tested",
+      "No defects remain",
+      "All concurrency interleavings were covered"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Coverage tools such as JaCoCo measure execution. Strong assertions and boundary cases are still required."
+  },
+  {
+    "id": "concept-v2-openapi",
+    "type": "single",
+    "category": 1,
+    "sourceIds": [
+      "y25-140"
+    ],
+    "track": "concept",
+    "prompt": "What is the relationship between OpenAPI and Swagger UI?",
+    "options": [
+      "OpenAPI describes an HTTP API contract; Swagger UI can render an interactive explorer",
+      "Both are database migration tools",
+      "Swagger UI automatically enforces all business authorization rules",
+      "OpenAPI requires a Java-only client"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "An API description documents operations and schemas. Runtime validation and authorization still require implementation."
+  },
+  {
+    "id": "concept-v2-thread-process",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.8"
+    ],
+    "track": "concept",
+    "prompt": "Which distinction between threads and processes is useful?",
+    "options": [
+      "Threads in a process share its address space while retaining their own stacks",
+      "Every thread has an entirely separate process address space",
+      "All processes automatically share every Java object",
+      "Threads require no scheduling or synchronization"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Shared process memory enables communication but introduces data-race concerns; separate processes generally have separate address spaces."
+  },
+  {
+    "id": "concept-v2-marker",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.14"
+    ],
+    "track": "concept",
+    "prompt": "Which characteristic makes Serializable a marker interface?",
+    "options": [
+      "It signals a capability without declaring ordinary behavior methods",
+      "It implements every serialization algorithm as default methods",
+      "It guarantees every object graph is serializable",
+      "It forces all fields to become transient"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The runtime serialization mechanism interprets the marker. Reachable nonserializable objects can still cause failure."
+  },
+  {
+    "id": "concept-v2-abstract-interface",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.16"
+    ],
+    "track": "concept",
+    "prompt": "You need multiple unrelated classes to share a contract, while each already extends another class. What fits Java inheritance rules?",
+    "options": [
+      "Have them implement an interface",
+      "Require them to extend two concrete classes",
+      "Put all instance fields in an interface",
+      "Use an abstract class and multiple class inheritance"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Java supports multiple interface implementation but not multiple class inheritance."
+  },
+  {
+    "id": "concept-v2-diamond",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.17"
+    ],
+    "track": "concept",
+    "prompt": "A class inherits conflicting default methods from two unrelated interfaces. What should it do?",
+    "options": [
+      "Override the method and explicitly resolve the conflict",
+      "Rely on whichever interface appears first alphabetically",
+      "Delete all constructors",
+      "Assume the JVM chooses a default randomly"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "An explicit override resolves the conflict; allowed InterfaceName.super calls can delegate to a selected implementation."
+  },
+  {
+    "id": "concept-v2-iterators",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.18"
+    ],
+    "track": "concept",
+    "prompt": "Which iterator statement is accurate?",
+    "options": [
+      "Fail-fast detection is best effort and is not a concurrency-control mechanism",
+      "ConcurrentModificationException is guaranteed for every race",
+      "A weakly consistent iterator always shows a frozen snapshot",
+      "CopyOnWriteArrayList iterators see every later write"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Fail-fast, weakly consistent, and snapshot iteration have different contracts. Do not use exceptions to implement synchronization."
+  },
+  {
+    "id": "concept-v2-jvm",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.21"
+    ],
+    "track": "concept",
+    "prompt": "Why can the same Java bytecode run on different supported operating systems?",
+    "options": [
+      "Each platform has a JVM implementation that executes the bytecode",
+      "The bytecode embeds every operating-system kernel",
+      "Java source code directly runs without a runtime",
+      "Every JVM uses identical machine instructions"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The JVM abstracts platform execution; native libraries and environment assumptions can still limit portability."
+  },
+  {
+    "id": "concept-v2-reservation-design",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.24"
+    ],
+    "track": "concept",
+    "prompt": "Two requests reserve capacity concurrently. Which design best protects the available-capacity invariant?",
+    "options": [
+      "Enforce an atomic reservation check/update with concurrency control and a clear failure result",
+      "Check availability outside the update boundary and assume it cannot change",
+      "Store every reservation in a static unsynchronized list",
+      "Use inheritance alone to guarantee atomicity"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Good OOP boundaries organize responsibility, but concurrent state invariants still require synchronization or transactional/versioned updates."
+  },
+  {
+    "id": "concept-v2-pass-by-value",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-007"
+    ],
+    "track": "concept",
+    "prompt": "A method appends to a StringBuilder parameter, then assigns that parameter a new builder. What does the caller observe?",
+    "options": [
+      "The append on its original object, but not reassignment of its variable",
+      "Its variable points to the new builder automatically",
+      "Neither effect, because object mutation is impossible",
+      "Java sometimes passes references by reference based on object size"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Java copies the reference value. Both copies can refer to the same mutable object, but parameter reassignment changes only the local copy."
+  },
+  {
+    "id": "concept-v2-strings",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y25-011"
+    ],
+    "track": "concept",
+    "prompt": "Match each Java text type.",
+    "options": [
+      [
+        "String",
+        "Immutable character sequence"
+      ],
+      [
+        "StringBuilder",
+        "Mutable builder without synchronized methods"
+      ],
+      [
+        "StringBuffer",
+        "Mutable buffer with synchronized methods"
+      ]
+    ],
+    "answer": [],
+    "explanation": "StringBuffer synchronization does not automatically make a multi-call business operation atomic."
+  },
+  {
+    "id": "concept-v2-access",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-012"
+    ],
+    "track": "concept",
+    "prompt": "A member has no explicit access modifier. What is its ordinary accessibility?",
+    "options": [
+      "Within its package",
+      "From every class in every package",
+      "Only by subclasses in any package",
+      "Only by the declaring object instance"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The default member access level is package-private. Protected additionally supports subclass access subject to Java access rules."
+  },
+  {
+    "id": "concept-v2-hashset",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-014"
+    ],
+    "track": "concept",
+    "prompt": "How does HashSet decide that an added element duplicates an existing one?",
+    "options": [
+      "Using hashCode to locate candidates and equals to compare them",
+      "Using only toString output",
+      "Using insertion position alone",
+      "Requiring object identity for every element"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "HashSet uses hash-based membership backed by a map. Stable, compatible equals/hashCode behavior is essential."
+  },
+  {
+    "id": "concept-v2-final-family",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y25-022"
+    ],
+    "track": "concept",
+    "prompt": "Match these similarly named Java features.",
+    "options": [
+      [
+        "final",
+        "Restricts reassignment, overriding, or inheritance depending on context"
+      ],
+      [
+        "finally",
+        "A cleanup block in exception-handling control flow"
+      ],
+      [
+        "finalize",
+        "Legacy finalization hook that must not be relied on for cleanup"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Prefer explicit resource management or try-with-resources. Abrupt process termination can prevent finally from running."
+  },
+  {
+    "id": "concept-v2-thread-start",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-023"
+    ],
+    "track": "concept",
+    "prompt": "What is the difference between t.start() and directly calling t.run()?",
+    "options": [
+      "start schedules a new thread of execution; run is an ordinary call on the current thread",
+      "run always starts two new threads",
+      "start and run are always interchangeable",
+      "start can be called repeatedly after the thread terminates"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A Thread instance can be started only once. Directly invoking run does not create a new thread."
+  },
+  {
+    "id": "concept-v2-runnable-callable",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y25-024"
+    ],
+    "track": "concept",
+    "prompt": "Match task contracts.",
+    "options": [
+      [
+        "Runnable.run",
+        "Returns void and cannot declare checked exceptions"
+      ],
+      [
+        "Callable.call",
+        "Returns a value and may throw an Exception"
+      ]
+    ],
+    "answer": [],
+    "explanation": "ExecutorService can submit these tasks. Future retrieval exposes results or execution failures."
+  },
+  {
+    "id": "concept-v2-object-monitor",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-025"
+    ],
+    "track": "concept",
+    "prompt": "Why are wait and notify associated with Object monitors?",
+    "options": [
+      "Coordination is tied to the lock protecting shared state, not one specific Thread instance",
+      "Every Object owns a permanently running thread",
+      "They can safely be invoked without holding the relevant monitor",
+      "notify transfers arbitrary object references between processes"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Monitor ownership and a shared condition define the coordination protocol. A waiting thread must recheck its condition after waking."
+  },
+  {
+    "id": "concept-v2-join",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-026"
+    ],
+    "track": "concept",
+    "prompt": "The current thread calls worker.join(). What is the intended effect?",
+    "options": [
+      "Wait for worker to terminate, subject to interruption and any timeout overload",
+      "Merge both thread stacks into one",
+      "Start worker if it has not been started",
+      "Acquire every lock held by worker"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "join is a completion-waiting mechanism, not a thread-start or lock-transfer operation."
+  },
+  {
+    "id": "concept-v2-thread-states",
+    "type": "multi",
+    "category": 2,
+    "sourceIds": [
+      "y25-027"
+    ],
+    "track": "concept",
+    "prompt": "Which are actual Java Thread.State values?",
+    "options": [
+      "RUNNABLE",
+      "TIMED_WAITING",
+      "TERMINATED",
+      "RUNNING"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Java does not expose RUNNING as a separate enum state. RUNNABLE includes execution and eligibility to execute."
+  },
+  {
+    "id": "concept-v2-sleep-wait",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-028"
+    ],
+    "track": "concept",
+    "prompt": "A thread owns an object monitor. How do sleep and wait differ regarding that monitor?",
+    "options": [
+      "wait releases that monitor while waiting; sleep does not release it",
+      "sleep releases every lock; wait releases none",
+      "Both automatically release every lock held by the thread",
+      "Neither can be interrupted"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "wait requires ownership of the relevant monitor and releases that monitor while waiting; it does not release unrelated locks."
+  },
+  {
+    "id": "concept-v2-latch",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-029"
+    ],
+    "track": "concept",
+    "prompt": "Three workers must finish before a coordinator continues. Which CountDownLatch use is appropriate?",
+    "options": [
+      "Initialize with 3; each worker counts down; the coordinator awaits",
+      "Initialize with 0 and expect workers to increase it automatically",
+      "Reset the same latch to 3 after each batch using reset()",
+      "Call await on every worker before allowing any countdown"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CountDownLatch is one-shot. Once its count reaches zero, subsequent awaits pass; it has no reset operation."
+  },
+  {
+    "id": "concept-v2-semaphore",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-030"
+    ],
+    "track": "concept",
+    "prompt": "acquire() is interrupted before obtaining a permit. Should a finally block unconditionally release one?",
+    "options": [
+      "No; that can add a permit that was never acquired",
+      "Yes; acquire always succeeds before throwing",
+      "Yes; release verifies permit ownership and will do nothing",
+      "Only if the semaphore count was initially zero"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Semaphore does not enforce ownership. Structure cleanup so each successful acquisition has one matching release."
+  },
+  {
+    "id": "concept-v2-read-write-lock",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-035"
+    ],
+    "track": "concept",
+    "prompt": "What does a conventional read/write lock allow?",
+    "options": [
+      "Concurrent readers when no writer owns the write lock; exclusive writing",
+      "Unlimited writers as long as no reader is waiting",
+      "A write operation under the read lock is always safe",
+      "Every reader must execute one at a time"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Read/write separation can help read-heavy workloads, but workload, fairness, and critical-section duration affect the result."
+  },
+  {
+    "id": "concept-v2-transient",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-037"
+    ],
+    "track": "concept",
+    "prompt": "A transient instance field has value 42 before default Java serialization. What is true?",
+    "options": [
+      "Its value is excluded from default serialization unless custom logic handles it",
+      "Its value is automatically encrypted",
+      "It becomes static on deserialization",
+      "Every serialization library must ignore it regardless of configuration"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "transient applies to default native serialization behavior; it is not encryption and does not impose rules on all other formats."
+  },
+  {
+    "id": "concept-v2-java-eight",
+    "type": "multi",
+    "category": 2,
+    "sourceIds": [
+      "y25-043"
+    ],
+    "track": "concept",
+    "prompt": "Which features were introduced with Java 8?",
+    "options": [
+      "Lambda expressions",
+      "Stream API",
+      "Default interface methods",
+      "The Java Platform Module System"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Java 8 introduced lambdas, streams, and default methods. The module system arrived in Java 9."
+  },
+  {
+    "id": "concept-v2-pattern-selection",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y25-055"
+    ],
+    "track": "concept",
+    "prompt": "Match a design problem to a suitable pattern.",
+    "options": [
+      [
+        "Interchangeable algorithms behind one contract",
+        "Strategy"
+      ],
+      [
+        "Constructing objects behind a creation abstraction",
+        "Factory"
+      ],
+      [
+        "Notifying interested listeners about changes",
+        "Observer"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Patterns communicate recurring design intent; choose one based on the actual collaboration problem."
+  },
+  {
+    "id": "concept-v2-abstract-factory",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-061"
+    ],
+    "track": "concept",
+    "prompt": "A UI toolkit needs matching Windows buttons and menus or matching Mac buttons and menus. Which pattern fits?",
+    "options": [
+      "Abstract Factory for compatible product families",
+      "Singleton solely to prevent all object creation",
+      "Observer solely to sort the products",
+      "A global lock instead of a creation abstraction"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Abstract Factory creates related families, while a simpler factory commonly abstracts creation of one product type."
+  },
+  {
+    "id": "concept-v2-builder",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-064"
+    ],
+    "track": "concept",
+    "prompt": "A configuration object has many optional fields and must be valid when published. What is a useful Builder role?",
+    "options": [
+      "Collect construction choices and validate before producing the completed object",
+      "Mutate every previously built instance whenever a new field is set",
+      "Automatically make mutable fields deeply immutable",
+      "Guarantee no validation is ever needed"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Builder separates construction steps from the final representation. Immutability and validation still require deliberate implementation."
+  },
+  {
+    "id": "concept-v2-observer",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-068"
+    ],
+    "track": "concept",
+    "prompt": "A price update should notify several subscribed displays. What is the Observer relationship?",
+    "options": [
+      "The subject notifies registered observers of a change",
+      "Every display must inherit the subject implementation",
+      "The subject creates exactly one global display",
+      "Observers replace the subject database transaction manager"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Observer decouples the event source from interested listeners. Manage subscription lifetimes to avoid unintended retention."
+  },
+  {
+    "id": "concept-v2-chain",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-069"
+    ],
+    "track": "concept",
+    "prompt": "A request passes through authentication, validation, and processing handlers. Which pattern describes this structure?",
+    "options": [
+      "Chain of Responsibility",
+      "Abstract Factory",
+      "Singleton by definition",
+      "Object pooling"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Handlers can process or forward a request according to a chain policy. The policy defines whether processing stops or continues."
+  },
+  {
+    "id": "concept-v2-sql-nosql",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.1"
+    ],
+    "track": "concept",
+    "prompt": "A team proposes a database solely because it is labeled NoSQL. What should the review focus on?",
+    "options": [
+      "Actual access patterns, transactions, consistency, and operational trade-offs",
+      "The assumption that every NoSQL database has identical semantics",
+      "Whether the name contains SQL",
+      "The assumption that SQL databases cannot scale horizontally"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Database families are broad labels. Evaluate concrete capabilities against application requirements."
+  },
+  {
+    "id": "concept-v2-indexes",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.4"
+    ],
+    "track": "concept",
+    "prompt": "Why not create an index on every column?",
+    "options": [
+      "Indexes consume space and add write-maintenance costs; usefulness depends on queries",
+      "Indexes always reduce every write cost",
+      "Every database allows only one index total",
+      "Indexes replace all uniqueness and foreign-key constraints"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Use execution plans and workload measurements to select useful access paths."
+  },
+  {
+    "id": "concept-v2-cqrs",
+    "type": "match",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.8"
+    ],
+    "track": "concept",
+    "prompt": "Match these data-access concepts.",
+    "options": [
+      [
+        "Query",
+        "Retrieve information without an intended business-state change"
+      ],
+      [
+        "Command",
+        "Request a business-state change"
+      ],
+      [
+        "CQRS",
+        "Separate command and query responsibilities/models"
+      ]
+    ],
+    "answer": [],
+    "explanation": "CQRS does not automatically require separate physical databases or eventual consistency in every implementation."
+  },
+  {
+    "id": "concept-v2-eventual-consistency",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.9"
+    ],
+    "track": "concept",
+    "prompt": "A replica returns an older value briefly after a write, then converges. Which model does this illustrate?",
+    "options": [
+      "Eventual consistency",
+      "A guarantee that every read sees the latest completed write",
+      "No durability by definition",
+      "A Java checked exception"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Eventual consistency allows temporary divergence; the application must decide whether stale reads fit the use case."
+  },
+  {
+    "id": "concept-v2-salary-ties",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.11"
+    ],
+    "track": "concept",
+    "prompt": "You must return all employees at the third-highest distinct salary. Which approach preserves ties?",
+    "options": [
+      "Filter DENSE_RANK() OVER (ORDER BY salary DESC) = 3 in an outer query",
+      "ORDER BY salary DESC LIMIT 1 OFFSET 2 always returns all ties",
+      "Use COUNT(*) = 3 without ranking salaries",
+      "Select only the third inserted employee"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Dense ranking numbers distinct salary levels without gaps. A single offset row does not represent every employee at that salary."
+  },
+  {
+    "id": "concept-v2-cdc",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y26-3.12"
+    ],
+    "track": "concept",
+    "prompt": "What does change data capture provide?",
+    "options": [
+      "A stream of committed database changes for downstream processing",
+      "A guarantee that every replica is always immediately current",
+      "A replacement for every database transaction",
+      "A method to prevent all schema changes"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "CDC transports changes, often from database logs. Consumers still need schema, ordering, and duplicate-handling policies."
+  },
+  {
+    "id": "concept-v2-sql-injection",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-070"
+    ],
+    "track": "concept",
+    "prompt": "Which query construction prevents user-supplied values from becoming SQL syntax?",
+    "options": [
+      "Use a PreparedStatement with bound values",
+      "Concatenate input after removing spaces",
+      "Surround arbitrary input with quotes by hand",
+      "Base64-encode the input then concatenate it"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Parameter binding separates values from query structure. Dynamic identifiers need validation or an allowlist."
+  },
+  {
+    "id": "concept-v2-jdbc-template",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-073"
+    ],
+    "track": "concept",
+    "prompt": "What does JdbcTemplate reduce?",
+    "options": [
+      "JDBC resource-management boilerplate and inconsistent SQLException handling",
+      "The need to choose correct SQL",
+      "The need to define transaction boundaries",
+      "Every database round trip automatically"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "JdbcTemplate handles common JDBC mechanics and exception translation, while application query and transaction design remain necessary."
+  },
+  {
+    "id": "concept-v2-jdbc-transaction",
+    "type": "order",
+    "category": 3,
+    "sourceIds": [
+      "y25-074"
+    ],
+    "track": "concept",
+    "prompt": "Order the success path of a local JDBC transaction using a fresh connection.",
+    "options": [
+      "Disable auto-commit",
+      "Execute the related SQL statements",
+      "Commit the transaction",
+      "Close or return the connection"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "On failure, roll back as appropriate and still close/return the connection. Connection state must be suitable for reuse in a pool."
+  },
+  {
+    "id": "concept-v2-orm",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-075"
+    ],
+    "track": "concept",
+    "prompt": "Which statement about ORM is accurate?",
+    "options": [
+      "It reduces mapping boilerplate but does not eliminate SQL and fetch-plan tuning",
+      "It guarantees every query is faster than JDBC",
+      "It makes schema design irrelevant",
+      "It prevents all N+1 queries automatically"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "ORM is a mapping and persistence abstraction, not a universal query optimizer."
+  },
+  {
+    "id": "concept-v2-hibernate-thread-safety",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-077"
+    ],
+    "track": "concept",
+    "prompt": "Does obtaining a Hibernate Session through getCurrentSession make it safe for concurrent use by multiple threads?",
+    "options": [
+      "No; current-session context management does not make Session thread-safe",
+      "Yes; the word current implies a global synchronized Session",
+      "Yes, but only for writes",
+      "Only if the SessionFactory has exactly one entity mapping"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Share the SessionFactory, not one mutable persistence context across concurrent work."
+  },
+  {
+    "id": "concept-v2-entity-states",
+    "type": "match",
+    "category": 3,
+    "sourceIds": [
+      "y25-079"
+    ],
+    "track": "concept",
+    "prompt": "Match each persistence state.",
+    "options": [
+      [
+        "New/transient",
+        "Not yet made persistent in a context"
+      ],
+      [
+        "Managed",
+        "Associated with the current persistence context"
+      ],
+      [
+        "Detached",
+        "No longer associated with that context"
+      ],
+      [
+        "Removed",
+        "Marked for deletion"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Dirty checking applies to managed state. Detached changes do not automatically persist through the old context."
+  },
+  {
+    "id": "concept-v2-get-reference",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-080"
+    ],
+    "track": "concept",
+    "prompt": "Why is a lazy entity reference not a guaranteed existence check?",
+    "options": [
+      "Database access and a missing-entity failure may be deferred until initialization",
+      "Every reference always inserts the entity first",
+      "A proxy guarantees a row exists forever",
+      "Reference creation must perform every possible join"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A provider may supply a proxy without loading the entity immediately; choose lookup APIs according to the required semantics."
+  },
+  {
+    "id": "concept-v2-merge-return",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-081"
+    ],
+    "track": "concept",
+    "prompt": "After managed = entityManager.merge(detached), which object should you use for managed-state updates?",
+    "options": [
+      "The returned managed instance",
+      "The detached argument, which must become managed",
+      "Either object because they must be the same reference",
+      "Neither, because merge always deletes the entity"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "merge copies state into a managed instance. The original detached argument does not become managed just because merge was called."
+  },
+  {
+    "id": "concept-v2-flush-clear-commit",
+    "type": "match",
+    "category": 3,
+    "sourceIds": [
+      "y25-082"
+    ],
+    "track": "concept",
+    "prompt": "Match persistence operations.",
+    "options": [
+      [
+        "flush",
+        "Synchronize pending context changes with the database"
+      ],
+      [
+        "clear",
+        "Detach all entities from the persistence context"
+      ],
+      [
+        "commit",
+        "Complete the transaction successfully"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Flush is not commit: SQL may execute while the transaction can still roll back. Clear does not persist pending changes by itself."
+  },
+  {
+    "id": "concept-v2-criteria-types",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-087"
+    ],
+    "track": "concept",
+    "prompt": "Which Criteria approach provides stronger compile-time checking of entity attributes?",
+    "options": [
+      "Use a generated static metamodel instead of arbitrary string attribute names",
+      "Assume root.get(\"typo\") can never fail",
+      "Concatenate all user input into HQL",
+      "Avoid specifying a result type in every query"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A programmatic query API can still contain runtime string-name errors. Typed metamodel attributes improve compile-time checking."
+  },
+  {
+    "id": "concept-v2-hibernate-cache",
+    "type": "order",
+    "category": 3,
+    "sourceIds": [
+      "y25-088"
+    ],
+    "track": "concept",
+    "prompt": "For an entity-by-ID lookup eligible for caching, order the usual fallback checks.",
+    "options": [
+      "Check the current persistence context",
+      "Check the enabled second-level cache",
+      "Load from the database on a cache miss"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "The first-level context is local to the Session; the second-level cache can share eligible entity data across contexts."
+  },
+  {
+    "id": "concept-v2-cte",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-093"
+    ],
+    "track": "concept",
+    "prompt": "What is a common table expression primarily useful for?",
+    "options": [
+      "Naming a query result within a statement to structure a complex query",
+      "Permanently creating a new physical table in every database",
+      "Guaranteeing every query runs faster",
+      "Removing the need for joins"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "WITH defines a query-scoped expression. Materialization and optimization behavior depend on the database and query."
+  },
+  {
+    "id": "concept-v2-procedure-trigger",
+    "type": "match",
+    "category": 3,
+    "sourceIds": [
+      "y25-094"
+    ],
+    "track": "concept",
+    "prompt": "Match these database mechanisms.",
+    "options": [
+      [
+        "Stored procedure",
+        "A callable routine that can accept parameters"
+      ],
+      [
+        "Trigger",
+        "Logic invoked by a configured database event"
+      ]
+    ],
+    "answer": [],
+    "explanation": "A trigger runs in response to its event rather than an ordinary explicit procedure call. Both need careful transaction and side-effect design."
+  },
+  {
+    "id": "concept-v2-window-rank",
+    "type": "single",
+    "category": 3,
+    "sourceIds": [
+      "y25-096"
+    ],
+    "track": "concept",
+    "prompt": "For descending salaries 100, 90, 90, 80, what are RANK and DENSE_RANK respectively?",
+    "options": [
+      "RANK: 1,2,2,4; DENSE_RANK: 1,2,2,3",
+      "RANK: 1,2,3,4; DENSE_RANK: 1,2,3,4",
+      "RANK: 1,2,2,3; DENSE_RANK: 1,2,2,4",
+      "Both collapse the two employees earning 90 into one row"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Both preserve tied rows. RANK leaves a gap after ties; DENSE_RANK numbers distinct ordered values without gaps."
+  },
+  {
+    "id": "concept-v2-monolith",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.1"
+    ],
+    "track": "concept",
+    "prompt": "A small team does not need independent service deployment. Which assessment is reasonable?",
+    "options": [
+      "A modular monolith may reduce operational complexity while preserving boundaries",
+      "Microservices always reduce debugging complexity",
+      "A monolith cannot have modules",
+      "Every module requires a separate database server"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Service distribution introduces network, consistency, and operational costs. Choose boundaries and deployment granularity deliberately."
+  },
+  {
+    "id": "concept-v2-async-communication",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.2"
+    ],
+    "track": "concept",
+    "prompt": "A user submits a long-running export. Which design can avoid holding the HTTP connection for the full job?",
+    "options": [
+      "Accept the job and expose status or completion notification",
+      "Keep retrying the same synchronous request without an identifier",
+      "Return success before storing or accepting any work",
+      "Remove error handling because the job is asynchronous"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Asynchronous acceptance separates request latency from job execution, but still needs durable acceptance, status, and failure handling."
+  },
+  {
+    "id": "concept-v2-performance-measure",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.5"
+    ],
+    "track": "concept",
+    "prompt": "A service is slow and the team proposes more instances immediately. What should guide the decision?",
+    "options": [
+      "Measure the bottleneck and test whether scaling that component improves the limiting resource",
+      "Assume every bottleneck is CPU",
+      "Increase all retry counts first",
+      "Remove every timeout"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Scaling the wrong component can increase pressure on a shared database or dependency. Measure before optimizing."
+  },
+  {
+    "id": "concept-v2-kafka-streams",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.6"
+    ],
+    "track": "concept",
+    "prompt": "What is Kafka Streams?",
+    "options": [
+      "A client library for processing Kafka data, including stateful transformations",
+      "A replacement name for every Kafka broker",
+      "A Java collection with no relationship to Kafka",
+      "The mandatory metadata server for every Kafka cluster"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Kafka Streams builds processing applications on Kafka; it is not a broker or metadata coordinator."
+  },
+  {
+    "id": "concept-v2-kafka-components",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.10"
+    ],
+    "track": "concept",
+    "prompt": "Match Kafka components.",
+    "options": [
+      [
+        "Producer",
+        "Publishes records"
+      ],
+      [
+        "Broker",
+        "Stores and serves partition data"
+      ],
+      [
+        "Consumer",
+        "Reads records"
+      ],
+      [
+        "Topic partition",
+        "An ordered log within a topic"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Partitioning provides parallelism; a topic can contain multiple independent ordered partition logs."
+  },
+  {
+    "id": "concept-v2-kafka-rabbit",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.12"
+    ],
+    "track": "concept",
+    "prompt": "Which distinction is useful when choosing between Kafka and RabbitMQ?",
+    "options": [
+      "Kafka centers on retained partition logs and replay; RabbitMQ commonly centers on routed queue delivery",
+      "Kafka cannot retain consumed records",
+      "RabbitMQ has no exchange routing",
+      "Both guarantee one global order across every consumer"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Delivery, retention, replay, ordering, and workload requirements matter more than treating either system as universally superior."
+  },
+  {
+    "id": "concept-v2-partition-key",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.13"
+    ],
+    "track": "concept",
+    "prompt": "Events for one order need partition-local ordering. What producer choice supports that goal?",
+    "options": [
+      "Use a stable order identifier as the record key with a compatible partitioning scheme",
+      "Use a new random key for every event of that order",
+      "Require every consumer to sort unrelated topics globally",
+      "Assume keyless records always go to one permanent partition"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Stable keys typically colocate related records. Partition-count or partitioner changes can affect the mapping."
+  },
+  {
+    "id": "concept-v2-broker",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.14"
+    ],
+    "track": "concept",
+    "prompt": "What is a Kafka broker?",
+    "options": [
+      "A server that stores partitions and handles produce/fetch requests",
+      "A single business message",
+      "The integer position of a record",
+      "A Java method that commits every database transaction"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A broker participates in the cluster and serves partition data; brokers and consumer groups are distinct concepts."
+  },
+  {
+    "id": "concept-v2-isr",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.15"
+    ],
+    "track": "concept",
+    "prompt": "Why distinguish the replication factor from ISR?",
+    "options": [
+      "Replication factor is the configured copy count; ISR tracks sufficiently caught-up replicas",
+      "They always refer to identical counts under all failures",
+      "ISR is the number of consumer groups",
+      "Replication factor is the number of records per batch"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A configured replica may be out of sync. Acknowledgment and minimum-ISR settings affect availability and durability behavior."
+  },
+  {
+    "id": "concept-v2-consumer-failure",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.16"
+    ],
+    "track": "concept",
+    "prompt": "A consumer disappears from a group. What normally allows progress to continue?",
+    "options": [
+      "Group membership recovery and reassignment of its partitions",
+      "Deleting the entire topic",
+      "All consumers sharing one in-memory offset variable",
+      "Changing every producer key to null"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "After failure detection and rebalance, another consumer can resume from committed offsets, potentially replaying uncommitted work."
+  },
+  {
+    "id": "concept-v2-retention",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.17"
+    ],
+    "track": "concept",
+    "prompt": "Does consuming a Kafka record automatically delete it from the log?",
+    "options": [
+      "No; retention or compaction policies govern removal",
+      "Yes; the first consumer permanently removes it",
+      "Only if the consumer uses Java",
+      "Yes; committed offsets physically overwrite every record"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Consumption position and log retention are separate. Retained data can be replayed subject to policy and available offsets."
+  },
+  {
+    "id": "concept-v2-offset-reset",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.19"
+    ],
+    "track": "concept",
+    "prompt": "When is auto.offset.reset relevant to a Kafka consumer?",
+    "options": [
+      "When no usable committed offset exists for the assigned partition",
+      "On every successful poll regardless of committed offsets",
+      "Whenever any message contains a null value",
+      "Only when the producer closes"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "It specifies where to begin when a valid committed position is unavailable; it does not override every existing committed offset."
+  },
+  {
+    "id": "concept-v2-virtual-memory",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.20"
+    ],
+    "track": "concept",
+    "prompt": "What does virtual memory provide?",
+    "options": [
+      "An address-space abstraction mapped onto physical memory and backing storage",
+      "Unlimited physical RAM without cost",
+      "A guarantee that the OS cannot terminate a process under pressure",
+      "The same concept as Java object serialization"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Address-space abstraction does not remove physical resource limits. Paging and memory pressure can affect performance."
+  },
+  {
+    "id": "concept-v2-throughput-latency",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.21"
+    ],
+    "track": "concept",
+    "prompt": "Match these performance measurements.",
+    "options": [
+      [
+        "Throughput",
+        "Completed work per unit of time"
+      ],
+      [
+        "Latency",
+        "Time taken for one operation"
+      ],
+      [
+        "p99 latency",
+        "A percentile describing the slower tail of observations"
+      ]
+    ],
+    "answer": [],
+    "explanation": "High throughput and low tail latency are different goals; batching can improve one while worsening the other."
+  },
+  {
+    "id": "concept-v2-cache-writes",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.22"
+    ],
+    "track": "concept",
+    "prompt": "Match cache access patterns.",
+    "options": [
+      [
+        "Cache-aside",
+        "Application loads the backing store on a cache miss"
+      ],
+      [
+        "Write-through",
+        "Write updates the cache and backing store synchronously through the pattern"
+      ],
+      [
+        "Write-behind",
+        "Backing-store writes are deferred after cache acceptance"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Deferred writes introduce durability and ordering concerns; cache-aside needs an invalidation/update strategy."
+  },
+  {
+    "id": "concept-v2-ttl",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.24"
+    ],
+    "track": "concept",
+    "prompt": "Match expiration approaches.",
+    "options": [
+      [
+        "Lazy expiration",
+        "Check whether an entry expired when it is accessed"
+      ],
+      [
+        "Active expiration",
+        "Background work removes expired entries"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Systems can combine these approaches. Logical expiry and physical memory reclamation need not occur at the same instant."
+  },
+  {
+    "id": "concept-v2-read-optimization",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.26"
+    ],
+    "track": "concept",
+    "prompt": "A list endpoint reads many rows and skips increasingly large offsets. What may improve stable sequential paging?",
+    "options": [
+      "Cursor/keyset pagination using a suitable ordered key",
+      "Returning the entire table on every page",
+      "Increasing page size without limit",
+      "Adding an unrelated index without inspecting the query"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Keyset pagination can avoid repeatedly scanning skipped rows. Cursor semantics must match a deterministic ordering."
+  },
+  {
+    "id": "concept-v2-write-optimization",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y26-4.27"
+    ],
+    "track": "concept",
+    "prompt": "How can batching help a write-heavy workload?",
+    "options": [
+      "Amortize per-request overhead while controlling batch size and latency",
+      "Guarantee that larger batches always reduce tail latency",
+      "Eliminate the need for transaction boundaries",
+      "Make non-idempotent retries safe automatically"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Batch size trades throughput against latency, memory use, and failure recovery. Measure and bound batches."
+  },
+  {
+    "id": "concept-v2-gateway",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y25-065"
+    ],
+    "track": "concept",
+    "prompt": "Which responsibility is commonly placed at an API gateway?",
+    "options": [
+      "Edge routing and selected cross-cutting access policies",
+      "Owning every service business table",
+      "Making service-level authorization unnecessary",
+      "Replacing all internal domain logic"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A gateway centralizes some edge concerns, but services still own domain rules and must enforce suitable authorization."
+  },
+  {
+    "id": "concept-v2-rabbit-routing",
+    "type": "match",
+    "category": 4,
+    "sourceIds": [
+      "y25-149"
+    ],
+    "track": "concept",
+    "prompt": "Match RabbitMQ exchange types.",
+    "options": [
+      [
+        "Direct",
+        "Exact routing-key matching"
+      ],
+      [
+        "Topic",
+        "Pattern-based routing-key matching"
+      ],
+      [
+        "Fanout",
+        "Broadcast to bound queues"
+      ],
+      [
+        "Headers",
+        "Header-attribute matching"
+      ]
+    ],
+    "answer": [],
+    "explanation": "A direct exchange may route one message to multiple queues with the same matching binding key."
+  },
+  {
+    "id": "concept-v2-cicd",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.1"
+    ],
+    "track": "concept",
+    "prompt": "A pipeline builds a JAR and pushes a Docker image to a registry. Has it necessarily deployed the application?",
+    "options": [
+      "No; the target runtime still needs a deployment/update step",
+      "Yes; registries execute every image as a service",
+      "Yes; a successful unit test creates a Kubernetes Pod",
+      "Only if the JAR filename contains prod"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Artifact production and deployment are distinct stages. A registry stores images; a runtime platform runs them."
+  },
+  {
+    "id": "concept-v2-ec2",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.3"
+    ],
+    "track": "concept",
+    "prompt": "Changing an EC2 instance to a larger CPU/memory type is what kind of scaling?",
+    "options": [
+      "Vertical scaling",
+      "Horizontal scale-out",
+      "Kafka partition rebalancing",
+      "Database normalization"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Vertical scaling changes one instance capacity; horizontal scaling changes how many instances serve the workload."
+  },
+  {
+    "id": "concept-v2-s3",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.7"
+    ],
+    "track": "concept",
+    "prompt": "Which workload is a natural fit for S3?",
+    "options": [
+      "Storing objects such as images, exports, and backups by key",
+      "Running an arbitrary always-on JVM process inside a bucket",
+      "Providing a normal in-process Java HashMap",
+      "Replacing all relational foreign-key constraints"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "S3 is object storage. Compute execution and relational transaction semantics are different services/capabilities."
+  },
+  {
+    "id": "concept-v2-lambda",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.8"
+    ],
+    "track": "concept",
+    "prompt": "What is a useful description of AWS Lambda?",
+    "options": [
+      "Event-driven managed function execution",
+      "An EC2 instance that you must always keep running manually",
+      "A Java lambda expression with no deployment environment",
+      "A database index type"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Serverless functions move infrastructure management to the platform, but startup behavior, limits, and dependency access still matter."
+  },
+  {
+    "id": "concept-v2-registry",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.9"
+    ],
+    "track": "concept",
+    "prompt": "What does a service registry help clients discover?",
+    "options": [
+      "Available service instances and their locations",
+      "Every user password",
+      "The entire source code of each service",
+      "A universal global database transaction"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Discovery maps logical services to reachable instances; health and lifecycle updates keep that mapping useful."
+  },
+  {
+    "id": "concept-v2-load-balancing",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.10"
+    ],
+    "track": "concept",
+    "prompt": "An instance is running but not ready to serve requests. How should readiness affect routing?",
+    "options": [
+      "Exclude it from serving traffic until ready",
+      "Route more traffic to force it to become ready",
+      "Treat process existence as sufficient readiness",
+      "Delete every healthy instance"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Readiness is about traffic eligibility. Liveness and startup checks answer different lifecycle questions."
+  },
+  {
+    "id": "concept-v2-scaling-metrics",
+    "type": "multi",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.11"
+    ],
+    "track": "concept",
+    "prompt": "Which signals can inform autoscaling when appropriately measured and configured?",
+    "options": [
+      "CPU utilization",
+      "Queue depth per worker",
+      "Request rate or latency indicators",
+      "Only the number of source-code files"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Choose metrics connected to load and capacity; thresholds, stabilization, and dependency bottlenecks need consideration."
+  },
+  {
+    "id": "concept-v2-network-protocols",
+    "type": "match",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.14"
+    ],
+    "track": "concept",
+    "prompt": "Match these protocol concepts.",
+    "options": [
+      [
+        "TCP",
+        "Reliable ordered byte-stream transport"
+      ],
+      [
+        "UDP",
+        "Datagram transport without built-in delivery guarantees"
+      ],
+      [
+        "HTTP",
+        "Application-layer request/response semantics"
+      ]
+    ],
+    "answer": [],
+    "explanation": "These operate at different abstraction levels. HTTP/3 uses QUIC over UDP, so HTTP must not be universally equated with TCP."
+  },
+  {
+    "id": "concept-v2-public-private",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.15"
+    ],
+    "track": "concept",
+    "prompt": "In a digital-signature scheme, which key normally creates the signature and which verifies it?",
+    "options": [
+      "The private key signs; the corresponding public key verifies",
+      "The public key signs; only the private key can verify",
+      "Both keys must be published to every client",
+      "No key is needed if Base64 encoding succeeds"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Signing and encryption are distinct operations. Keep the signing private key secret and distribute trusted verification information."
+  },
+  {
+    "id": "concept-v2-tls",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.16"
+    ],
+    "track": "concept",
+    "prompt": "What does a TLS certificate primarily help establish during HTTPS connection setup?",
+    "options": [
+      "A binding between an identity and a public key, subject to certificate validation",
+      "That the application has no authorization bugs",
+      "That every HTTP response is semantically correct",
+      "That all data at rest is encrypted"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "TLS protects the communication channel when correctly validated; application-level correctness and permissions remain separate."
+  },
+  {
+    "id": "concept-v2-ecs-eks-flow",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.17"
+    ],
+    "track": "concept",
+    "prompt": "Which flow describes a common external request path into a containerized service?",
+    "options": [
+      "Load balancer routes to healthy service targets, which handle the request",
+      "An image registry executes the HTTP request directly",
+      "A Terraform state file returns the business response",
+      "An autoscaler substitutes for the service code"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Load balancing, compute scheduling, discovery, and scaling cooperate but have different responsibilities."
+  },
+  {
+    "id": "concept-v2-helm-kubectl",
+    "type": "match",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.19"
+    ],
+    "track": "concept",
+    "prompt": "Match Kubernetes tooling.",
+    "options": [
+      [
+        "kubectl",
+        "Interact with Kubernetes resources through the API"
+      ],
+      [
+        "Helm chart",
+        "Package parameterized Kubernetes manifests"
+      ],
+      [
+        "values.yaml",
+        "Supply chart configuration values"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Helm helps package and manage releases; kubectl remains a general cluster API client."
+  },
+  {
+    "id": "concept-v2-vpc",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.20"
+    ],
+    "track": "concept",
+    "prompt": "What is the role of a VPC?",
+    "options": [
+      "Provide a logically isolated virtual network with configured subnets and routing",
+      "Automatically make every subnet reachable from the internet",
+      "Store every application password as plaintext",
+      "Replace all application authorization checks"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Public reachability depends on routes, gateways, addressing, and security controls, not just membership in a VPC."
+  },
+  {
+    "id": "concept-v2-vpn",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y26-5.21"
+    ],
+    "track": "concept",
+    "prompt": "What is a common VPN purpose?",
+    "options": [
+      "Create an encrypted tunnel between networks or a client and a network",
+      "Turn every internal database into a public website",
+      "Guarantee every tunneled application request is authorized",
+      "Replace database backups"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A VPN protects connectivity across a tunnel. It does not remove the need for application authentication and authorization."
+  },
+  {
+    "id": "concept-v2-architecture-flow",
+    "type": "order",
+    "category": 4,
+    "sourceIds": [
+      "y25-146"
+    ],
+    "track": "concept",
+    "prompt": "Order this stated synchronous request flow through an application.",
+    "options": [
+      "Client sends an HTTP request",
+      "Gateway routes it to the selected service",
+      "Service validates business rules and accesses persistence",
+      "Service returns a response through the gateway",
+      "Client renders the result"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "This is one explicit architecture flow. Gateways and persistence are not mandatory for every possible request."
+  },
+  {
+    "id": "concept-v2-cloud-comparison",
+    "type": "single",
+    "category": 5,
+    "sourceIds": [
+      "y25-157"
+    ],
+    "track": "concept",
+    "prompt": "In an interview, you used Azure but are asked about AWS. What is an accurate approach?",
+    "options": [
+      "Explain the AWS concept and identify a comparable capability without claiming direct usage",
+      "Claim production AWS experience because all clouds are identical",
+      "Avoid discussing the actual project environment",
+      "Assert that service names are interchangeable with identical behavior"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Separate general knowledge from firsthand experience, and explain where comparisons are conceptual rather than identical."
+  },
+  {
+    "id": "concept-v2-cloudwatch",
+    "type": "single",
+    "category": 6,
+    "sourceIds": [
+      "y26-6.4"
+    ],
+    "track": "concept",
+    "prompt": "What does a CloudWatch alarm do?",
+    "options": [
+      "Evaluate configured metric conditions and trigger configured state-change actions",
+      "Automatically fix every application defect",
+      "Replace all log instrumentation",
+      "Guarantee that an alarm threshold is appropriate without tuning"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Alarm rules need meaningful thresholds and responses. Metric evaluation and remediation are separate concerns."
+  },
+  {
+    "id": "concept-v2-heap-dump",
+    "type": "single",
+    "category": 6,
+    "sourceIds": [
+      "y26-6.6"
+    ],
+    "track": "concept",
+    "prompt": "What information is a heap dump especially useful for?",
+    "options": [
+      "Inspecting objects and reference-retention paths at a point in time",
+      "Listing every future request the service will receive",
+      "Proving a leak from total heap size alone",
+      "Replacing all CPU and thread diagnostics"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Heap analysis helps find retained objects and roots. Combine it with workload and GC trends; collection can have operational cost."
+  },
+  {
+    "id": "concept-v2-distributed-debug",
+    "type": "single",
+    "category": 6,
+    "sourceIds": [
+      "y25-147"
+    ],
+    "track": "concept",
+    "prompt": "A request intermittently fails across several services. What investigation best connects the evidence?",
+    "options": [
+      "Follow a correlation/trace identifier through logs, metrics, dependencies, and recent changes",
+      "Restart every service before collecting any evidence",
+      "Assume every failure is a JVM memory leak",
+      "Inspect only the frontend button color"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Build a timeline of the request and its dependencies. Diagnose impact and cause before choosing a targeted remedy."
+  },
+  {
+    "id": "concept-v2-stream-lazy",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "A stream pipeline contains filter and map but no terminal operation. What normally happens?",
+    "options": [
+      "The element-processing pipeline is not traversed yet",
+      "All source elements are immediately transformed",
+      "The source collection is always overwritten",
+      "A new thread is created for every element"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Intermediate operations describe a lazy computation; a terminal operation drives traversal."
+  },
+  {
+    "id": "concept-v2-stream-functions",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "Match Stream operations to the relevant functional interface.",
+    "options": [
+      [
+        "map",
+        "Function"
+      ],
+      [
+        "filter",
+        "Predicate"
+      ],
+      [
+        "forEach",
+        "Consumer"
+      ],
+      [
+        "sorted with a custom ordering",
+        "Comparator"
+      ]
+    ],
+    "answer": [],
+    "explanation": "Track both element types and the role of each supplied function."
+  },
+  {
+    "id": "concept-v2-stream-flatmap",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "You have a Stream<List<String>> and need one Stream<String>. What operation fits?",
+    "options": [
+      "flatMap(List::stream)",
+      "map(List::stream), which already returns Stream<String>",
+      "count()",
+      "sorted() alone"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "map creates one output element per input, here a stream; flatMap flattens the nested streams."
+  },
+  {
+    "id": "concept-v2-stream-type-order",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "After map(Person::getName), why is sorted(Comparator.comparingInt(Person::getAge)) invalid?",
+    "options": [
+      "The stream now contains String elements, not Person objects",
+      "Streams cannot be sorted",
+      "map always ends the pipeline",
+      "Comparators can only compare primitive arrays"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Either sort the Person stream before mapping or use a comparator suitable for the mapped element type."
+  },
+  {
+    "id": "concept-v2-stream-empty-match",
+    "type": "multi",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "For an empty stream, which statements are true?",
+    "options": [
+      "allMatch(predicate) returns true",
+      "noneMatch(predicate) returns true",
+      "anyMatch(predicate) returns false",
+      "findFirst() returns a nonempty Optional"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "Universal conditions over an empty stream are vacuously true; no element exists to satisfy anyMatch or findFirst."
+  },
+  {
+    "id": "concept-v2-stream-reduce-empty",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "What does Stream.<Integer>empty().reduce(0, Integer::sum) return?",
+    "options": [
+      "0",
+      "Optional.empty()",
+      "null",
+      "A NoSuchElementException"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "This overload has an identity and returns a value. The no-identity overload returns Optional."
+  },
+  {
+    "id": "concept-v2-stream-reduce-associative",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "Why is subtraction a poor reduction operator for a parallel sum-like reduction?",
+    "options": [
+      "It is not associative, so grouping partial results can change the result",
+      "All integer operators are forbidden in streams",
+      "Parallel streams require string results",
+      "Subtraction always throws an exception"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Parallel reduction may regroup work. A valid reduction needs an associative operator and a compatible identity."
+  },
+  {
+    "id": "concept-v2-stream-reuse",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "After calling count() on a Stream, can you safely call collect() on the same stream instance?",
+    "options": [
+      "No; obtain a new stream from the source",
+      "Yes; every terminal operation resets it",
+      "Only if count returned zero",
+      "Only if the source is an ArrayList"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "A stream is intended for one pipeline traversal. Reuse after consumption is not supported."
+  },
+  {
+    "id": "concept-v2-stream-order",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "Which terminal operation preserves encounter order when an ordered parallel stream emits side effects?",
+    "options": [
+      "forEachOrdered",
+      "forEach guarantees order on every parallel stream",
+      "findAny guarantees the first element",
+      "unordered always preserves order"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "forEachOrdered honors encounter order if present. Ordering and safe shared mutation are separate requirements."
+  },
+  {
+    "id": "concept-v2-stream-collect",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "Why prefer collect(toList()) over adding to one shared ArrayList inside parallel forEach?",
+    "options": [
+      "The collector coordinates accumulation and combination without that unsafe shared mutation",
+      "An ordinary ArrayList becomes synchronized inside a lambda",
+      "forEach always executes on one thread",
+      "Collectors disable all parallel processing"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Use stream reduction mechanisms rather than unsafely mutating a shared non-thread-safe container."
+  },
+  {
+    "id": "concept-v2-stream-array",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "Which operation creates an Integer[] from Stream<Integer>?",
+    "options": [
+      "toArray(Integer[]::new)",
+      "toArray(String[]::new)",
+      "count()",
+      "reduce(Integer::sum)"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "The array generator supplies the intended runtime array type. The no-argument overload returns Object[]."
+  },
+  {
+    "id": "concept-v2-stream-terminals",
+    "type": "match",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "Match terminal operations to their result shapes.",
+    "options": [
+      [
+        "count",
+        "long"
+      ],
+      [
+        "min with comparator",
+        "Optional of an element"
+      ],
+      [
+        "forEach",
+        "void"
+      ],
+      [
+        "collect(groupingBy(...))",
+        "Map of grouped results"
+      ]
+    ],
+    "answer": [],
+    "explanation": "An empty stream affects optional and aggregate results differently; choose the overload and collector deliberately."
+  },
+  {
+    "id": "concept-v2-stream-findany",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "Which statement about findAny is valid?",
+    "options": [
+      "It may return any element, even when the source has encounter order",
+      "It must always return the last element",
+      "It guarantees the first element in every parallel run",
+      "It returns the element count"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Use findFirst when the first element of an encounter-ordered stream is semantically required."
+  },
+  {
+    "id": "concept-v2-stream-window",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "What is Stream.of(1,2,3,4,5).skip(2).limit(2).toList()?",
+    "options": [
+      "[3, 4]",
+      "[1, 2]",
+      "[2, 3]",
+      "[4, 5]"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "skip removes the first two elements; limit retains the next two. This example uses the Java 16+ Stream.toList method."
+  },
+  {
+    "id": "concept-v2-stream-parallel",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y25-extra-stream"
+    ],
+    "track": "concept",
+    "prompt": "When is parallelStream guaranteed to be faster than stream?",
+    "options": [
+      "There is no universal guarantee; measure the actual workload",
+      "Whenever there are at least two elements",
+      "Whenever the source is an ArrayList",
+      "Whenever the lambda performs blocking I/O"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Parallelism adds splitting, scheduling, combining, and contention costs. Source structure and operation cost matter."
+  },
+  {
+    "id": "concept-v2-oop-composition",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.6"
+    ],
+    "track": "concept",
+    "prompt": "A Car delegates starting to an Engine field. Which relationship does this model?",
+    "options": [
+      "Has-a composition/collaboration",
+      "Car must be a subtype of Engine",
+      "Multiple class inheritance",
+      "Method overloading by itself"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Composition expresses collaboration through a contained reference; inheritance expresses a substitutable is-a relationship."
+  },
+  {
+    "id": "concept-v2-oop-dispatch",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.6"
+    ],
+    "track": "concept",
+    "prompt": "Animal a = new Dog(); a.sound(); calls an overridden Dog.sound(). Which principle is illustrated?",
+    "options": [
+      "Runtime polymorphism",
+      "Method selection based only on the variable name",
+      "Compile-time overloading only",
+      "Serialization"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "For an overridden instance method, runtime dispatch selects behavior using the actual object type."
+  },
+  {
+    "id": "concept-v2-oop-encapsulation",
+    "type": "single",
+    "category": 2,
+    "sourceIds": [
+      "y26-2.6"
+    ],
+    "track": "concept",
+    "prompt": "Why keep a mutable collection field private and avoid returning its live reference?",
+    "options": [
+      "To protect invariants from uncontrolled external mutation",
+      "To make every operation automatically thread-safe",
+      "To eliminate all object allocations",
+      "To prevent the class from having any public methods"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Encapsulation controls access to state. Thread safety and defensive-copy costs are separate design decisions."
+  },
+  {
+    "id": "concept-v2-rabbit-direct-many",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y25-149"
+    ],
+    "track": "concept",
+    "prompt": "Two queues are bound to one direct exchange with binding key order.created. A message has that routing key. What happens?",
+    "options": [
+      "Both matching queues can receive a copy",
+      "Only one queue may ever match a direct exchange",
+      "The message is necessarily discarded",
+      "It must be converted into a fanout exchange first"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Direct means exact binding-key matching, not a one-queue limit."
+  },
+  {
+    "id": "concept-v2-rabbit-dlx",
+    "type": "single",
+    "category": 4,
+    "sourceIds": [
+      "y25-149"
+    ],
+    "track": "concept",
+    "prompt": "Which distinction between a DLX and a dead-letter queue is correct?",
+    "options": [
+      "The DLX is an exchange that routes eligible dead-lettered messages to bound queues",
+      "The DLX is always the consumer thread itself",
+      "Every unroutable initial publish automatically becomes a dead letter",
+      "A dead-letter queue cannot have an exchange binding"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "Dead lettering originates from eligible queue events/policies. The exchange and the destination queue have different roles."
+  }
+]
